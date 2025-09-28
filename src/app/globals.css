@@ -1,16 +1,28 @@
+header .termin-buchen-btn {
+  background-color: var(--color-main-yellow) !important;
+}
+header .termin-buchen-btn:hover {
+  background-color: var(--color-main-green) !important;
+}
+
 @import "tailwindcss";
+
+.termin-buchen-btn {
+  background-color: var(--color-main-yellow) !important;
+}
+.termin-buchen-btn:hover {
+  background-color: var(--color-main-green) !important;
+}
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --color-main-green: rgb(0, 235, 172);
+  --color-main-yellow: rgb(238, 193, 107);
+  --color-white: #fff;
+  --color-black: #000;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
 @media (prefers-color-scheme: dark) {
   :root {

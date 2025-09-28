@@ -1,0 +1,3 @@
+file 'vid1_fixed.mp4'
+file 'vid2_fixed.mp4'
+file 'vid3_fixed.mp4'
