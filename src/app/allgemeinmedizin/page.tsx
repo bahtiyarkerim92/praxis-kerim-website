@@ -1,7 +1,10 @@
 "use client";
+
 import Image from "next/image";
+import { useI18n } from '../../i18n';
 
 export default function AllgemeinmedizinPage() {
+  const { t } = useI18n();
   return (
     <main className="w-full">
       {/* Hero Section */}
@@ -20,14 +23,10 @@ export default function AllgemeinmedizinPage() {
         </div>
         <div className="max-w-6xl mx-auto px-6 text-center mt-10">
           <h1 className="text-4xl md:text-5xl font-extrabold text-[#EEC16B] mb-6">
-            Allgemeinmedizin
+            {t('allgemeinmedizin.heroTitle')}
           </h1>
           <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-            Die Allgemeinmedizin ist das Herzstück unserer Praxis. Wir sind Ihr
-            erster Ansprechpartner bei allen gesundheitlichen Fragen – ob
-            akute Beschwerden, chronische Erkrankungen oder Vorsorge. Mit
-            moderner Diagnostik, persönlicher Betreuung und langjähriger
-            Erfahrung begleiten wir Sie und Ihre Familie in allen Lebenslagen.
+            {t('allgemeinmedizin.heroText')}
           </p>
         </div>
       </section>
@@ -36,7 +35,7 @@ export default function AllgemeinmedizinPage() {
       <section className="w-full bg-gray-50 py-20">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-[#EEC16B]">
-            Unsere Schwerpunkte
+            {t('allgemeinmedizin.focusTitle')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 text-gray-700 text-lg leading-relaxed">
             <div className="space-y-4">
@@ -47,7 +46,7 @@ export default function AllgemeinmedizinPage() {
                     <path d="M7 13.5l3 3 7-7" stroke="#EEC16B" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
-                <span>Akutversorgung bei Infekten, Verletzungen und Schmerzen</span>
+                <span>{t('allgemeinmedizin.focus1')}</span>
               </div>
               <div className="flex items-start gap-3 group">
                 <span className="mt-1 flex-shrink-0">
@@ -56,7 +55,7 @@ export default function AllgemeinmedizinPage() {
                     <path d="M7 13.5l3 3 7-7" stroke="#EEC16B" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
-                <span>Behandlung von Bluthochdruck, Diabetes und Herz-Kreislauf-Erkrankungen</span>
+                <span>{t('allgemeinmedizin.focus2')}</span>
               </div>
               <div className="flex items-start gap-3 group">
                 <span className="mt-1 flex-shrink-0">
@@ -65,7 +64,7 @@ export default function AllgemeinmedizinPage() {
                     <path d="M7 13.5l3 3 7-7" stroke="#EEC16B" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
-                <span>Betreuung von Kindern, Erwachsenen und Senioren</span>
+                <span>{t('allgemeinmedizin.focus3')}</span>
               </div>
               <div className="flex items-start gap-3 group">
                 <span className="mt-1 flex-shrink-0">
@@ -74,7 +73,7 @@ export default function AllgemeinmedizinPage() {
                     <path d="M7 13.5l3 3 7-7" stroke="#EEC16B" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
-                <span>Impfungen nach STIKO-Empfehlung</span>
+                <span>{t('allgemeinmedizin.focus4')}</span>
               </div>
             </div>
             <div className="space-y-4">
@@ -85,7 +84,7 @@ export default function AllgemeinmedizinPage() {
                     <path d="M7 13.5l3 3 7-7" stroke="#EEC16B" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
-                <span>Gesundheits-Check-ups & Vorsorgeuntersuchungen</span>
+                <span>{t('allgemeinmedizin.focus5')}</span>
               </div>
               <div className="flex items-start gap-3 group">
                 <span className="mt-1 flex-shrink-0">
@@ -94,7 +93,7 @@ export default function AllgemeinmedizinPage() {
                     <path d="M7 13.5l3 3 7-7" stroke="#EEC16B" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
-                <span>Reisemedizinische Beratung und Impfungen</span>
+                <span>{t('allgemeinmedizin.focus6')}</span>
               </div>
               <div className="flex items-start gap-3 group">
                 <span className="mt-1 flex-shrink-0">
@@ -103,7 +102,7 @@ export default function AllgemeinmedizinPage() {
                     <path d="M7 13.5l3 3 7-7" stroke="#EEC16B" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
-                <span>Kleine Wundversorgung direkt in der Praxis</span>
+                <span>{t('allgemeinmedizin.focus7')}</span>
               </div>
               <div className="flex items-start gap-3 group">
                 <span className="mt-1 flex-shrink-0">
@@ -112,7 +111,7 @@ export default function AllgemeinmedizinPage() {
                     <path d="M7 13.5l3 3 7-7" stroke="#EEC16B" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
-                <span>Hausbesuche bei Bedarf und nach Vereinbarung</span>
+                <span>{t('allgemeinmedizin.focus8')}</span>
               </div>
             </div>
           </div>
@@ -123,18 +122,10 @@ export default function AllgemeinmedizinPage() {
       <section className="w-full bg-black text-white py-20">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-8 text-[#EEC16B]">
-            Vorsorge & Prävention
+            {t('allgemeinmedizin.preventionTitle')}
           </h2>
           <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed text-gray-300">
-            Vorsorge ist besser als Nachsorge. In unserer Praxis bieten wir
-            regelmäßige Vorsorgeuntersuchungen, Screening-Programme und
-            Gesundheits-Check-ups an. Ziel ist es, Erkrankungen frühzeitig zu
-            erkennen und durch gezielte Maßnahmen vorzubeugen.  
-            <br />
-            <br />
-            Dazu gehören unter anderem Hautkrebs-Screenings, kardiologische
-            Basisuntersuchungen, Blutuntersuchungen und Beratungen zu
-            Ernährung, Bewegung und Lebensstil.
+            {t('allgemeinmedizin.preventionText')}
           </p>
         </div>
       </section>
@@ -144,18 +135,13 @@ export default function AllgemeinmedizinPage() {
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#EEC16B]">
-              Chronische Erkrankungen & Langzeitbetreuung
+              {t('allgemeinmedizin.chronicTitle')}
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed mb-4">
-              Viele Menschen leben mit chronischen Erkrankungen wie Diabetes,
-              Asthma oder Herz-Kreislauf-Erkrankungen. Eine kontinuierliche,
-              verlässliche Betreuung ist dabei entscheidend für die Lebensqualität.
+              {t('allgemeinmedizin.chronicText1')}
             </p>
             <p className="text-lg text-gray-700 leading-relaxed">
-              Wir begleiten unsere Patientinnen und Patienten langfristig,
-              passen Therapiepläne individuell an und arbeiten eng mit
-              Fachärzten zusammen. So stellen wir sicher, dass Sie auch bei
-              komplexen Krankheitsverläufen optimal versorgt sind.
+              {t('allgemeinmedizin.chronicText2')}
             </p>
           </div>
           <div className="flex justify-center">
