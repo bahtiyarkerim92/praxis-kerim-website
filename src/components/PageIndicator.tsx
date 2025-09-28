@@ -26,11 +26,18 @@ export default function PageIndicator() {
   const key = PAGE_KEYS[cleanPath || "/"];
   const name = key ? t(key) : "";
   const [visible, setVisible] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   const [headerHeight, setHeaderHeight] = useState(0);
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+    
     // Header-Element suchen (angenommen: <header> oder .header)
     function updateHeaderHeight() {
       const header = document.querySelector('header, .header') as HTMLElement | null;
@@ -39,29 +46,29 @@ export default function PageIndicator() {
     updateHeaderHeight();
     window.addEventListener('resize', updateHeaderHeight);
     return () => window.removeEventListener('resize', updateHeaderHeight);
-  }, []);
+  }, [mounted]);
+  
   useEffect(() => {
+    if (!mounted) return;
+    
     const onScroll = () => setScrollY(window.scrollY);
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+  }, [mounted]);
+  
   useEffect(() => {
+    if (!mounted) return;
+    
     setVisible(false);
     const timeout = setTimeout(() => setVisible(true), 100);
     return () => clearTimeout(timeout);
-  }, [name]);
-  if (!name) return null;
+  }, [name, mounted]);
+  
+  if (!name || !mounted) return null;
 
   // Schwelle: Nach x Pixeln (z.B. halbe Viewporthöhe) beginnt der Übergang zur Screenmitte
   // Bis headerHeight gescrollt ist, bewegt sich der Indicator pixelgenau mit, danach bleibt er fixiert
-  const isClient = typeof window !== 'undefined';
-  const top = isClient
-    ? headerHeight + (window.innerHeight - headerHeight) / 2 - Math.min(scrollY, headerHeight)
-    : 0;
-  // Hydration-Mismatch vermeiden: Erst rendern, wenn window verfügbar (Client), sonst hidden
-  if (!isClient) {
-    return null;
-  }
+  const top = headerHeight + (window.innerHeight - headerHeight) / 2 - Math.min(scrollY, headerHeight);
   return (
     <div
       className={`fixed right-0 z-[100] flex flex-col items-end pointer-events-none select-none transition-all duration-700 ${visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}

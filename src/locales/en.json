@@ -1,3 +1,4 @@
+{
 		"allgemeinmedizin.heroTitle": "General Medicine",
 		"allgemeinmedizin.heroText": "General medicine is the heart of our practice. We are your first point of contact for all health questions – whether acute complaints, chronic diseases or preventive care. With modern diagnostics, personal attention and many years of experience, we support you and your family in all situations.",
 		"allgemeinmedizin.focusTitle": "Our Focus Areas",
@@ -93,8 +94,7 @@
 		"ueberuns.team2Lang": "Speaks German, Turkish, Azerbaijani, Russian",
 		"ueberuns.team3Name": "Bülent Alkan",
 		"ueberuns.team3Role": "General Medicine",
-		"ueberuns.team3Lang": "Speaks Bulgarian, Turkish, German"
-{
+		"ueberuns.team3Lang": "Speaks Bulgarian, Turkish, German",
 	"leistungen.title": "Our Services",
 	"leistungen.allgemeinmedizin.title": "General Medicine",
 	"leistungen.allgemeinmedizin.desc": "Family care, preventive check-ups, and acute care for the whole family.",

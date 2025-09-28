@@ -1,3 +1,4 @@
+{
   "allgemeinmedizin.heroTitle": "",
   "allgemeinmedizin.heroText": "",
   "allgemeinmedizin.focusTitle": "",
@@ -93,8 +94,7 @@
   "ueberuns.team2Lang": "",
   "ueberuns.team3Name": "",
   "ueberuns.team3Role": "",
-  "ueberuns.team3Lang": ""
-{
+  "ueberuns.team3Lang": "",
   "leistungen.title": "Nasze usługi",
   "leistungen.allgemeinmedizin.title": "Medycyna ogólna",
   "leistungen.allgemeinmedizin.desc": "Opieka lekarza rodzinnego, badania profilaktyczne i opieka doraźna dla całej rodziny.",

@@ -1,3 +1,4 @@
+{
   "allgemeinmedizin.heroTitle": "Allgemeinmedizin",
   "allgemeinmedizin.heroText": "Die Allgemeinmedizin ist das Herzstück unserer Praxis. Wir sind Ihr erster Ansprechpartner bei allen gesundheitlichen Fragen – ob akute Beschwerden, chronische Erkrankungen oder Vorsorge. Mit moderner Diagnostik, persönlicher Betreuung und langjähriger Erfahrung begleiten wir Sie und Ihre Familie in allen Lebenslagen.",
   "allgemeinmedizin.focusTitle": "Unsere Schwerpunkte",
@@ -93,8 +94,7 @@
   "ueberuns.team2Lang": "Spricht Deutsch, Türkisch, Aserbaidschanisch, Russisch",
   "ueberuns.team3Name": "Bülent Alkan",
   "ueberuns.team3Role": "Allgemeinmedizin",
-  "ueberuns.team3Lang": "Spricht Bulgarisch, Türkisch, Deutsch"
-{
+  "ueberuns.team3Lang": "Spricht Bulgarisch, Türkisch, Deutsch",
   "leistungen.title": "Unsere Leistungen",
   "leistungen.allgemeinmedizin.title": "Allgemeinmedizin",
   "leistungen.allgemeinmedizin.desc": "Hausärztliche Betreuung, Vorsorgeuntersuchungen und Akutversorgung für die ganze Familie.",

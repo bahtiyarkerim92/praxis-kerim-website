@@ -1,3 +1,4 @@
+{
   "allgemeinmedizin.heroTitle": "",
   "allgemeinmedizin.heroText": "",
   "allgemeinmedizin.focusTitle": "",
@@ -93,8 +94,7 @@
   "ueberuns.team2Lang": "",
   "ueberuns.team3Name": "",
   "ueberuns.team3Role": "",
-  "ueberuns.team3Lang": ""
-{
+  "ueberuns.team3Lang": "",
   "leistungen.title": "Hizmetlerimiz",
   "leistungen.allgemeinmedizin.title": "Aile Hekimliği",
   "leistungen.allgemeinmedizin.desc": "Tüm aile için aile hekimliği bakımı, koruyucu muayeneler ve akut tedavi.",

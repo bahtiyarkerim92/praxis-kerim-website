@@ -1,3 +1,4 @@
+{
   "allgemeinmedizin.heroTitle": "",
   "allgemeinmedizin.heroText": "",
   "allgemeinmedizin.focusTitle": "",
@@ -93,8 +94,7 @@
   "ueberuns.team2Lang": "",
   "ueberuns.team3Name": "",
   "ueberuns.team3Role": "",
-  "ueberuns.team3Lang": ""
-{
+  "ueberuns.team3Lang": "",
   "leistungen.title": "Нашите услуги",
   "leistungen.allgemeinmedizin.title": "Обща медицина",
   "leistungen.allgemeinmedizin.desc": "Семейна грижа, профилактични прегледи и спешна помощ за цялото семейство.",
