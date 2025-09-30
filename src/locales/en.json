@@ -1,4 +1,5 @@
 {
+	"nav.orderForm": "Order forms",
 		"allgemeinmedizin.heroTitle": "General Medicine",
 		"allgemeinmedizin.heroText": "General medicine is the heart of our practice. We are your first point of contact for all health questions – whether acute complaints, chronic diseases or preventive care. With modern diagnostics, personal attention and many years of experience, we support you and your family in all situations.",
 		"allgemeinmedizin.focusTitle": "Our Focus Areas",
@@ -118,7 +119,14 @@
 	"team.5.name": "M. Cem Samar",
 	"team.5.role": "Private Doctor – Video Consultation Only (Psychiatry / Psychotherapy)",
 	"team.cem.role": "Psychiatry / Psychotherapy",
-	"team.cem.note": "Private Doctor – Video Consultation Only",
+		"team.cem.note": "Private Doctor – Video Consultation Only",
+		"terminbuchung.heroTitle": "Book Appointment",
+		"terminbuchung.infoTitle": "Appointment Information",
+		"terminbuchung.infoText1": "To book an appointment, use the contact options below.",
+		"terminbuchung.infoText2": "You can contact us via WhatsApp, email, or phone.",
+		"terminbuchung.whatsappButton": "Write on WhatsApp",
+		"terminbuchung.emailButton": "Send Email",
+		"terminbuchung.phoneButton": "Call",
 	"about.description": "At Dr. Kerim's practice, we offer modern family medical care to the highest scientific standards. Our international team provides comprehensive care – from prevention and diagnostics to acute and long-term care. We value personal attention, quick accessibility, and digital services such as video consultations and online orders.",
 	"about.orderForm": "Order Form",
 	"about.whatsappChannel": "WhatsApp Channel",
@@ -203,4 +211,10 @@
 		"kontakt.appointmentInfo": "We take time for your health. Book your appointment online – for check-ups, acute complaints or consultations. Our digital booking system enables quick and easy planning, minimizing waiting times.",
 		"kontakt.digitalTitle": "Digital Services",
 		"kontakt.digitalInfo": "Use our digital services for fast and uncomplicated care – order prescriptions, referrals or sick notes online or stay informed via our WhatsApp channel."
+,
+	"bestellung.heroTitle": "Order Forms",
+	"bestellung.infoTitle": "New ordering system in development",
+	"bestellung.infoText": "We are currently developing a new online system for ordering prescriptions, referrals, and sick notes.\nUntil then, please use the following contact options:",
+	"bestellung.emailButton": "E-mail",
+	"bestellung.phoneButton": "Phone: +49 69 870015360"
 }

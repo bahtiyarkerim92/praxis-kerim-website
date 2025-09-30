@@ -1,8 +1,11 @@
 
 "use client";
+
 import Image from "next/image";
+import { useI18n } from '../../i18n';
 
 export default function ChirurgiePage() {
+  const { t } = useI18n();
   return (
     <main className="w-full">
       {/* Hero Section */}
@@ -22,12 +25,10 @@ export default function ChirurgiePage() {
 
         <div className="max-w-6xl mx-auto px-6 text-center mt-10">
           <h1 className="text-4xl md:text-5xl font-extrabold text-[#EEC16B] mb-6">
-            Chirurgie
+            {t('chirurgie.heroTitle')}
           </h1>
           <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-            In unserer Praxis bieten wir eine breite Palette kleiner chirurgischer
-            Eingriffe an. Von der Wundversorgung bis zu Gelenkinjektionen – wir
-            versorgen Sie direkt vor Ort nach höchsten medizinischen Standards.
+            {t('chirurgie.heroText')}
           </p>
         </div>
       </section>
@@ -36,7 +37,7 @@ export default function ChirurgiePage() {
       <section className="w-full bg-gray-50 py-20">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-[#EEC16B]">
-            Kleine chirurgische Eingriffe
+            {t('chirurgie.proceduresTitle')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 text-gray-700 text-lg leading-relaxed">
             <div className="space-y-4">
@@ -47,7 +48,7 @@ export default function ChirurgiePage() {
                     <path d="M7 13.5l3 3 7-7" stroke="#EEC16B" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
-                <span>Entfernung von Hautveränderungen (z. B. Warzen, Muttermale)</span>
+                <span>{t('chirurgie.procedure1')}</span>
               </div>
               <div className="flex items-start gap-3 group">
                 <span className="mt-1 flex-shrink-0">
@@ -56,7 +57,7 @@ export default function ChirurgiePage() {
                     <path d="M7 13.5l3 3 7-7" stroke="#EEC16B" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
-                <span>Behandlung von Abszessen und Entzündungen</span>
+                <span>{t('chirurgie.procedure2')}</span>
               </div>
               <div className="flex items-start gap-3 group">
                 <span className="mt-1 flex-shrink-0">
@@ -65,7 +66,7 @@ export default function ChirurgiePage() {
                     <path d="M7 13.5l3 3 7-7" stroke="#EEC16B" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
-                <span>Versorgung kleiner Schnitt- und Platzwunden</span>
+                <span>{t('chirurgie.procedure3')}</span>
               </div>
               <div className="flex items-start gap-3 group">
                 <span className="mt-1 flex-shrink-0">
@@ -74,7 +75,7 @@ export default function ChirurgiePage() {
                     <path d="M7 13.5l3 3 7-7" stroke="#EEC16B" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
-                <span>Abtragung von Lipomen und Zysten</span>
+                <span>{t('chirurgie.procedure4')}</span>
               </div>
             </div>
             <div className="space-y-4">
@@ -85,7 +86,7 @@ export default function ChirurgiePage() {
                     <path d="M7 13.5l3 3 7-7" stroke="#EEC16B" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
-                <span>Nagelchirurgie (z. B. eingewachsene Nägel)</span>
+                <span>{t('chirurgie.procedure5')}</span>
               </div>
               <div className="flex items-start gap-3 group">
                 <span className="mt-1 flex-shrink-0">
@@ -94,7 +95,7 @@ export default function ChirurgiePage() {
                     <path d="M7 13.5l3 3 7-7" stroke="#EEC16B" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
-                <span>Kleinere Gewebeproben (Biopsien)</span>
+                <span>{t('chirurgie.procedure6')}</span>
               </div>
               <div className="flex items-start gap-3 group">
                 <span className="mt-1 flex-shrink-0">
@@ -103,7 +104,7 @@ export default function ChirurgiePage() {
                     <path d="M7 13.5l3 3 7-7" stroke="#EEC16B" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
-                <span>Versorgung nach kleineren Unfällen</span>
+                <span>{t('chirurgie.procedure7')}</span>
               </div>
               <div className="flex items-start gap-3 group">
                 <span className="mt-1 flex-shrink-0">
@@ -112,7 +113,7 @@ export default function ChirurgiePage() {
                     <path d="M7 13.5l3 3 7-7" stroke="#EEC16B" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
-                <span>Nachsorge nach ambulanten Eingriffen</span>
+                <span>{t('chirurgie.procedure8')}</span>
               </div>
             </div>
           </div>
@@ -123,19 +124,10 @@ export default function ChirurgiePage() {
       <section className="w-full bg-black text-white py-20">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-8 text-[#EEC16B]">
-            Wundversorgung & chronische Wunden
+            {t('chirurgie.woundTitle')}
           </h2>
           <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed text-gray-300">
-            Akute und chronische Wunden erfordern eine fachgerechte, oft
-            langfristige Behandlung. Wir versorgen Schnitt-, Riss- und
-            Schürfwunden, kümmern uns um Verbrennungsverletzungen und führen
-            moderne Wundtherapie bei chronischen Wunden (z. B. Ulkus cruris,
-            diabetisches Fußsyndrom) durch.  
-            <br />
-            <br />
-            Dabei setzen wir auf individuell abgestimmte Methoden und arbeiten
-            eng mit Fachzentren zusammen, wenn eine weiterführende Versorgung
-            nötig wird.
+            {t('chirurgie.woundText')}
           </p>
         </div>
       </section>
@@ -145,16 +137,13 @@ export default function ChirurgiePage() {
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#EEC16B]">
-              Gelenkinjektionen & Nachsorge
+              {t('chirurgie.jointTitle')}
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed mb-4">
-              Schmerzen in Gelenken durch Arthrose, Entzündungen oder Verletzungen
-              können mit gezielten Injektionen effektiv behandelt werden.
+              {t('chirurgie.jointText1')}
             </p>
             <p className="text-lg text-gray-700 leading-relaxed">
-              Wir bieten Gelenkinjektionen mit entzündungshemmenden Medikamenten
-              oder Hyaluronsäure an und begleiten Sie während der gesamten
-              Behandlung mit engmaschiger Kontrolle und Nachsorge.
+              {t('chirurgie.jointText2')}
             </p>
           </div>
           <div className="flex justify-center">

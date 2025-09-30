@@ -156,7 +156,8 @@ export default function Header() {
           </div>
           <Link href="/ueber-uns" className="text-white text-base font-medium hover:text-[color:rgb(238,193,107)]" onClick={() => setMobileOpen(false)}>{t('nav.about')}</Link>
           <Link href="/kontakt" className="text-white text-base font-medium hover:text-[color:rgb(238,193,107)]" onClick={() => setMobileOpen(false)}>{t('nav.contact')}</Link>
-          <Link href="/terminbuchung" className="rounded-xl shadow font-medium text-base px-4 py-2 cursor-pointer bg-[color:rgb(238,193,107)] text-white" onClick={() => setMobileOpen(false)}>{t('nav.appointment')}</Link>
+          <Link href="/terminbuchung" className="text-white text-base font-medium hover:text-[color:rgb(238,193,107)]" onClick={() => setMobileOpen(false)}>{t('nav.appointment')}</Link>
+          <Link href="/bestellung" className="text-white text-base font-medium hover:text-[color:rgb(238,193,107)]" onClick={() => setMobileOpen(false)}>{t('nav.orderForm')}</Link>
         </nav>
       )}
     </header>

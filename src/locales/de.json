@@ -1,4 +1,5 @@
 {
+  "nav.orderForm": "Formulare bestellen",
   "allgemeinmedizin.heroTitle": "Allgemeinmedizin",
   "allgemeinmedizin.heroText": "Die Allgemeinmedizin ist das Herzstück unserer Praxis. Wir sind Ihr erster Ansprechpartner bei allen gesundheitlichen Fragen – ob akute Beschwerden, chronische Erkrankungen oder Vorsorge. Mit moderner Diagnostik, persönlicher Betreuung und langjähriger Erfahrung begleiten wir Sie und Ihre Familie in allen Lebenslagen.",
   "allgemeinmedizin.focusTitle": "Unsere Schwerpunkte",
@@ -119,6 +120,13 @@
   "team.5.role": "Privatarzt – nur Videosprechstunde (Psychiatrie / Psychotherapie)",
   "team.cem.role": "Psychiatrie / Psychotherapie",
   "team.cem.note": "Privatarzt – nur Videosprechstunde",
+  "terminbuchung.heroTitle": "Termin buchen",
+  "terminbuchung.infoTitle": "Information zur Terminbuchung",
+  "terminbuchung.infoText1": "Um einen Termin zu buchen, nutzen Sie bitte die untenstehenden Kontaktmöglichkeiten.",
+  "terminbuchung.infoText2": "Sie können uns per WhatsApp, E-Mail oder Telefon erreichen.",
+  "terminbuchung.whatsappButton": "Per WhatsApp schreiben",
+  "terminbuchung.emailButton": "E-Mail senden",
+  "terminbuchung.phoneButton": "Anrufen",
   "about.description": "In der Praxis Dr. Kerim bieten wir moderne hausärztliche Versorgung nach höchsten wissenschaftlichen Standards. Mit unserem internationalen Team betreuen wir Patientinnen und Patienten umfassend – von der Vorsorge über Diagnostik bis zur Akut- und Langzeitversorgung. Wir legen großen Wert auf persönliche Betreuung, schnelle Erreichbarkeit und digitale Services wie Videosprechstunden und Online-Bestellungen.",
   "about.orderForm": "Bestellformular",
   "about.whatsappChannel": "WhatsApp-Kanal",
@@ -203,4 +211,10 @@
   "kontakt.appointmentInfo": "Wir nehmen uns Zeit für Ihre Gesundheit. Buchen Sie Ihren Termin online – für Vorsorge, akute Beschwerden oder Beratung. Unser digitales Buchungssystem ermöglicht eine schnelle und einfache Planung und minimiert die Wartezeiten.",
   "kontakt.digitalTitle": "Digitale Services",
   "kontakt.digitalInfo": "Nutzen Sie unsere digitalen Services für eine schnelle und unkomplizierte Versorgung – bestellen Sie Rezepte, Überweisungen oder Krankmeldungen online oder bleiben Sie über unseren WhatsApp-Kanal informiert."
+  ,
+  "bestellung.heroTitle": "Bestellformulare",
+  "bestellung.infoTitle": "Neues Bestellsystem im Aufbau",
+  "bestellung.infoText": "Aktuell bauen wir ein neues Online-System für die Bestellung von Rezepten, Überweisungen und Krankmeldungen.\nBis dahin nutzen Sie bitte die folgenden Kontaktwege:",
+  "bestellung.emailButton": "E-Mail",
+  "bestellung.phoneButton": "Telefon: +49 69 870015360"
 }

@@ -71,22 +71,22 @@ export default function PageIndicator() {
   const top = headerHeight + (window.innerHeight - headerHeight) / 2 - Math.min(scrollY, headerHeight);
   return (
     <div
-      className={`fixed right-0 z-[100] flex flex-col items-end pointer-events-none select-none transition-all duration-700 ${visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}
+      className={`hidden md:flex fixed right-0 z-[100] flex-col items-end pointer-events-none select-none transition-all duration-700 ${visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}
       style={{ top: `${top}px`, transform: 'translateY(-50%)', right: '18px' }}
     >
       <div className="flex flex-col items-center">
         {/* Linie oben */}
         <span
           aria-hidden
-          className="block h-16 md:h-24 w-[2px] bg-gradient-to-b from-[#EEC16B] via-[#EEC16B40] to-transparent opacity-80"
+          className="block h-10 md:h-14 w-[1.5px] bg-gradient-to-b from-[#EEC16B] via-[#EEC16B40] to-transparent opacity-80"
         />
         <span
-          className="text-[#EEC16B] font-extrabold text-[1.1rem] md:text-[1.3rem] tracking-[0.35em] opacity-90"
+          className="text-[#EEC16B] font-extrabold text-[0.85rem] md:text-[1rem] tracking-[0.25em] opacity-90"
           style={{
             writingMode: 'vertical-rl',
             textOrientation: 'mixed',
             fontFamily: 'Montserrat, Geist, Arial, sans-serif',
-            letterSpacing: '0.35em',
+            letterSpacing: '0.25em',
             textTransform: 'uppercase',
             background: 'none',
             borderRadius: 0,
@@ -104,7 +104,7 @@ export default function PageIndicator() {
         {/* Linie unten */}
         <span
           aria-hidden
-          className="block h-16 md:h-24 w-[2px] bg-gradient-to-t from-[#EEC16B] via-[#EEC16B40] to-transparent opacity-80"
+          className="block h-10 md:h-14 w-[1.5px] bg-gradient-to-t from-[#EEC16B] via-[#EEC16B40] to-transparent opacity-80"
         />
       </div>
     </div>

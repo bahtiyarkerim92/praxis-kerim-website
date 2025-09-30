@@ -42,7 +42,7 @@ export default function LeistungenSection() {
                        hover:scale-110 hover:-translate-y-4 hover:shadow-[0_0_25px_#EEC16B] cursor-pointer"
           >
             {/* TODO: Ersetze 'allgemein.png' durch dein Icon */}
-            <span className="mb-6 w-20 h-20 relative block">
+            <span className="mb-6 w-44 h-44 relative block">
               <Image
                 src="/images/p1-icon.png"
                 alt="Allgemeinmedizin"
@@ -70,7 +70,7 @@ export default function LeistungenSection() {
                        hover:scale-110 hover:-translate-y-4 hover:shadow-[0_0_25px_#EEC16B] cursor-pointer"
           >
             {/* TODO: Ersetze 'innere.png' */}
-            <span className="mb-6 w-20 h-20 relative block">
+            <span className="mb-6 w-44 h-44 relative block">
               <Image
                 src="/images/p2-icon.png"
                 alt="Innere Medizin"
@@ -98,7 +98,7 @@ export default function LeistungenSection() {
                        hover:scale-110 hover:-translate-y-4 hover:shadow-[0_0_25px_#EEC16B] cursor-pointer"
           >
             {/* TODO: Ersetze 'chirurgie.png' */}
-            <span className="mb-6 w-20 h-20 relative block">
+            <span className="mb-6 w-44 h-44 relative block">
               <Image
                 src="/images/p3-icon.png"
                 alt="Chirurgie"
@@ -126,7 +126,7 @@ export default function LeistungenSection() {
                        hover:scale-110 hover:-translate-y-4 hover:shadow-[0_0_25px_#EEC16B] cursor-pointer"
           >
             {/* TODO: Ersetze 'beschneidung.png' */}
-            <span className="mb-6 w-20 h-20 relative block">
+            <span className="mb-6 w-44 h-44 relative block">
               <Image
                 src="/images/p4-icon.png"
                 alt="Beschneidungen"

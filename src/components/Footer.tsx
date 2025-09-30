@@ -9,7 +9,7 @@ export default function Footer() {
 		<footer className="w-full bg-black text-white py-12 mt-20 border-t border-gray-800">
 			<div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
 				{/* Logo */}
-				<div className="flex flex-col items-center md:items-start">
+				<div className="flex flex-col items-center md:items-start bg-black bg-opacity-80 rounded-2xl p-6">
 					<Image
 						src="/images/logo.png" // TODO: Dein Logo einfügen
 						alt="Praxis Dr. Kerim"
@@ -23,7 +23,7 @@ export default function Footer() {
 				</div>
 
 						{/* Öffnungszeiten */}
-						<div className="flex flex-col items-center md:items-start">
+						<div className="flex flex-col items-center md:items-start bg-black bg-opacity-80 rounded-2xl p-6">
 							 <h3 className="text-lg font-bold mb-3 text-[#EEC16B]">{t('footer.openingHours')}</h3>
 							<ul className="space-y-2 text-gray-300 text-sm">
 								 <li className="hover:text-[#EEC16B] transition-colors">{t('footer.opening.monThu')}</li>
@@ -32,7 +32,7 @@ export default function Footer() {
 						</div>
 
 				{/* Kontakt */}
-				<div className="flex flex-col items-center md:items-start">
+				<div className="flex flex-col items-center md:items-start bg-black bg-opacity-80 rounded-2xl p-6">
 					 <h3 className="text-lg font-bold mb-3 text-[#EEC16B]">{t('footer.contact')}</h3>
 					<ul className="space-y-2 text-gray-300 text-sm">
 						<li>

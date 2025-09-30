@@ -1,7 +1,10 @@
 "use client";
+
 import Image from "next/image";
+import { useI18n } from '../../i18n';
 
 export default function InnereMedizinPage() {
+  const { t } = useI18n();
   return (
     <main className="w-full">
       {/* Hero Section */}
@@ -21,13 +24,10 @@ export default function InnereMedizinPage() {
 
         <div className="max-w-6xl mx-auto px-6 text-center mt-10">
           <h1 className="text-4xl md:text-5xl font-extrabold text-[#EEC16B] mb-6">
-            Innere Medizin
+            {t('innereMedizin.heroTitle')}
           </h1>
           <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-            Unsere Abteilung für Innere Medizin vereint modernste Diagnostik,
-            fundierte Erfahrung und individuelle Betreuung. Wir kümmern uns um
-            Erkrankungen der inneren Organe wie Herz, Lunge, Leber, Nieren und
-            Stoffwechsel – von akuten Beschwerden bis zur Langzeittherapie.
+            {t('innereMedizin.heroText')}
           </p>
         </div>
       </section>
@@ -36,7 +36,7 @@ export default function InnereMedizinPage() {
       <section className="w-full bg-gray-50 py-20">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-[#EEC16B]">
-            Diagnostik & Funktionsuntersuchungen
+            {t('innereMedizin.diagnosticsTitle')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 text-gray-700 text-lg leading-relaxed">
             <div className="space-y-4">
@@ -47,7 +47,7 @@ export default function InnereMedizinPage() {
                     <path d="M7 13.5l3 3 7-7" stroke="#EEC16B" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
-                <span>EKG und Langzeit-EKG</span>
+                <span>{t('innereMedizin.diagnostics1')}</span>
               </div>
               <div className="flex items-start gap-3 group">
                 <span className="mt-1 flex-shrink-0">
@@ -56,7 +56,7 @@ export default function InnereMedizinPage() {
                     <path d="M7 13.5l3 3 7-7" stroke="#EEC16B" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
-                <span>24-Stunden-Blutdruckmessung</span>
+                <span>{t('innereMedizin.diagnostics2')}</span>
               </div>
               <div className="flex items-start gap-3 group">
                 <span className="mt-1 flex-shrink-0">
@@ -65,7 +65,7 @@ export default function InnereMedizinPage() {
                     <path d="M7 13.5l3 3 7-7" stroke="#EEC16B" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
-                <span>Lungenfunktionsprüfung (Spirometrie)</span>
+                <span>{t('innereMedizin.diagnostics3')}</span>
               </div>
               <div className="flex items-start gap-3 group">
                 <span className="mt-1 flex-shrink-0">
@@ -74,7 +74,7 @@ export default function InnereMedizinPage() {
                     <path d="M7 13.5l3 3 7-7" stroke="#EEC16B" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
-                <span>Belastungsuntersuchungen</span>
+                <span>{t('innereMedizin.diagnostics4')}</span>
               </div>
             </div>
             <div className="space-y-4">
@@ -85,7 +85,7 @@ export default function InnereMedizinPage() {
                     <path d="M7 13.5l3 3 7-7" stroke="#EEC16B" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
-                <span>Ultraschall (Sonografie) von Bauchorganen und Schilddrüse</span>
+                <span>{t('innereMedizin.diagnostics5')}</span>
               </div>
               <div className="flex items-start gap-3 group">
                 <span className="mt-1 flex-shrink-0">
@@ -94,7 +94,7 @@ export default function InnereMedizinPage() {
                     <path d="M7 13.5l3 3 7-7" stroke="#EEC16B" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
-                <span>Blutuntersuchungen im hauseigenen Labor</span>
+                <span>{t('innereMedizin.diagnostics6')}</span>
               </div>
               <div className="flex items-start gap-3 group">
                 <span className="mt-1 flex-shrink-0">
@@ -103,7 +103,7 @@ export default function InnereMedizinPage() {
                     <path d="M7 13.5l3 3 7-7" stroke="#EEC16B" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
-                <span>Herz-Kreislauf-Diagnostik</span>
+                <span>{t('innereMedizin.diagnostics7')}</span>
               </div>
               <div className="flex items-start gap-3 group">
                 <span className="mt-1 flex-shrink-0">
@@ -112,7 +112,7 @@ export default function InnereMedizinPage() {
                     <path d="M7 13.5l3 3 7-7" stroke="#EEC16B" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
-                <span>Vorsorgeuntersuchungen nach Leitlinien</span>
+                <span>{t('innereMedizin.diagnostics8')}</span>
               </div>
             </div>
           </div>
@@ -123,16 +123,10 @@ export default function InnereMedizinPage() {
       <section className="w-full bg-black text-white py-20">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-8 text-[#EEC16B]">
-            Vorsorge & Früherkennung
+            {t('innereMedizin.preventionTitle')}
           </h2>
           <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed text-gray-300">
-            Krankheiten wie Bluthochdruck, Diabetes oder Herzrhythmusstörungen
-            entwickeln sich oft schleichend. Regelmäßige Vorsorgeuntersuchungen
-            sind daher der Schlüssel zur frühzeitigen Erkennung.  
-            <br />
-            <br />
-            Wir bieten Check-ups, Screeningprogramme und Beratungen zu Risikofaktoren
-            an – damit Sie langfristig gesund bleiben.
+            {t('innereMedizin.preventionText')}
           </p>
         </div>
       </section>
@@ -142,19 +136,13 @@ export default function InnereMedizinPage() {
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#EEC16B]">
-              Therapie & Langzeitbetreuung
+              {t('innereMedizin.therapyTitle')}
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed mb-4">
-              Wir begleiten unsere Patientinnen und Patienten nicht nur bei
-              akuten Erkrankungen, sondern auch bei chronischen Verläufen.
-              Dabei entwickeln wir individuelle Therapiepläne und passen diese
-              regelmäßig an den aktuellen Gesundheitszustand an.
+              {t('innereMedizin.therapyText1')}
             </p>
             <p className="text-lg text-gray-700 leading-relaxed">
-              Bei komplexen Krankheitsbildern arbeiten wir eng mit
-              Fachspezialisten zusammen, um eine optimale Versorgung zu
-              gewährleisten. So stellen wir sicher, dass Sie langfristig die
-              bestmögliche medizinische Betreuung erhalten.
+              {t('innereMedizin.therapyText2')}
             </p>
           </div>
           <div className="flex justify-center">

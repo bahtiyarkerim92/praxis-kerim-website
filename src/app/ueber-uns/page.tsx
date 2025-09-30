@@ -1,6 +1,9 @@
+"use client";
 import Image from "next/image";
+import { useI18n } from '../../i18n';
 
 export default function UeberUnsPage() {
+  const { t } = useI18n();
   return (
     <main className="w-full">
       {/* Hero Bild */}
@@ -21,16 +24,16 @@ export default function UeberUnsPage() {
       <section className="w-full bg-white text-black py-20">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#EEC16B]">
-            Wer wir sind
+            {t('ueberuns.whoTitle')}
           </h2>
           <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto mb-6">
-            Die <span className="font-semibold text-[#EEC16B]">Praxis Dr. Kerim</span> steht für moderne, patientenorientierte hausärztliche Versorgung nach höchsten wissenschaftlichen Standards. Unser Ziel ist es, für Sie und Ihre Familie ein verlässlicher Partner in allen Gesundheitsfragen zu sein – von der Vorsorge über die Akutbehandlung bis zur langfristigen Betreuung chronischer Erkrankungen.
+            {t('ueberuns.whoText1')}
           </p>
           <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto mb-6">
-            Unser internationales Ärzteteam vereint langjährige Erfahrung aus verschiedenen medizinischen Fachrichtungen. Wir setzen auf modernste Diagnostik, digitale Services und eine persönliche, empathische Betreuung. In unserer Praxis sind Sie nicht nur Patient, sondern Mensch – mit individuellen Bedürfnissen und Lebensumständen.
+            {t('ueberuns.whoText2')}
           </p>
           <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
-            Wir sprechen mehrere Sprachen und legen großen Wert auf eine offene, vertrauensvolle Kommunikation. Ihre Gesundheit und Ihr Wohlbefinden stehen bei uns im Mittelpunkt.
+            {t('ueberuns.whoText3')}
           </p>
         </div>
       </section>
@@ -40,23 +43,23 @@ export default function UeberUnsPage() {
       <section className="w-full bg-black text-white py-20">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-8 text-[#EEC16B]">
-            Unsere Philosophie & Werte
+            {t('ueberuns.philosophieTitle')}
           </h2>
           <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed text-gray-300 mb-6">
-            Wir betrachten Gesundheit ganzheitlich: Vorsorge, schnelle Diagnostik und individuelle Therapie stehen bei uns im Mittelpunkt. Unser Anspruch ist es, modernste Medizin mit persönlicher Betreuung zu verbinden, sodass unsere Patientinnen und Patienten nicht nur medizinisch, sondern auch menschlich bestens versorgt sind.
+            {t('ueberuns.philosophieText')}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
             <div className="bg-white/5 rounded-xl p-6 border border-white/10">
-              <h3 className="text-xl font-bold text-[#EEC16B] mb-2">Ganzheitlichkeit</h3>
-              <p className="text-gray-300">Wir sehen den Menschen als Einheit aus Körper, Geist und Seele. Prävention, Diagnostik und Therapie werden individuell auf Sie abgestimmt.</p>
+              <h3 className="text-xl font-bold text-[#EEC16B] mb-2">{t('ueberuns.value1Title')}</h3>
+              <p className="text-gray-300">{t('ueberuns.value1Text')}</p>
             </div>
             <div className="bg-white/5 rounded-xl p-6 border border-white/10">
-              <h3 className="text-xl font-bold text-[#EEC16B] mb-2">Innovation</h3>
-              <p className="text-gray-300">Wir nutzen moderne Technik, digitale Services und aktuelle wissenschaftliche Erkenntnisse für Ihre optimale Versorgung.</p>
+              <h3 className="text-xl font-bold text-[#EEC16B] mb-2">{t('ueberuns.value2Title')}</h3>
+              <p className="text-gray-300">{t('ueberuns.value2Text')}</p>
             </div>
             <div className="bg-white/5 rounded-xl p-6 border border-white/10">
-              <h3 className="text-xl font-bold text-[#EEC16B] mb-2">Empathie</h3>
-              <p className="text-gray-300">Wir nehmen uns Zeit, hören zu und begegnen Ihnen mit Respekt und Wertschätzung – unabhängig von Herkunft, Alter oder Lebenssituation.</p>
+              <h3 className="text-xl font-bold text-[#EEC16B] mb-2">{t('ueberuns.value3Title')}</h3>
+              <p className="text-gray-300">{t('ueberuns.value3Text')}</p>
             </div>
           </div>
         </div>
@@ -67,7 +70,7 @@ export default function UeberUnsPage() {
       <section className="w-full bg-white text-black py-20">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-[#EEC16B]">
-            Die Chefärzte
+            {t('ueberuns.chiefsTitle')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Dr. Bahtiyar Kerim */}
@@ -84,15 +87,15 @@ export default function UeberUnsPage() {
                 />
               </span>
               <h3 className="text-xl font-bold text-[#EEC16B] whitespace-nowrap">
-                Dr. med. Bahtiyar Kerim, MHBA
+                {t('ueberuns.chief1Name')}
               </h3>
               <p className="text-gray-700 mt-3 leading-relaxed">
-                Facharzt für Allgemeinmedizin mit Spezialisierung auf <span className="font-semibold">internistische Diagnostik</span> und Notfallmedizin. Dr. Kerim ist bekannt für seine präzise Diagnostik, seine ruhige Art und seine Fähigkeit, auch in schwierigen Situationen einen kühlen Kopf zu bewahren. Er engagiert sich für die kontinuierliche Weiterbildung des Teams und die Einführung innovativer Behandlungsmethoden.
+                {t('ueberuns.chief1Text')}
               </p>
               <ul className="text-gray-600 text-base mt-2 list-disc list-inside">
-                <li>Langjährige Erfahrung in Klinik und Praxis</li>
-                <li>Mitglied in mehreren medizinischen Fachgesellschaften</li>
-                <li>Spricht Deutsch, Bulgarisch, Türkisch, Englisch, Serbo-Kroatisch</li>
+                <li>{t('ueberuns.chief1List1')}</li>
+                <li>{t('ueberuns.chief1List2')}</li>
+                <li>{t('ueberuns.chief1List3')}</li>
               </ul>
             </div>
 
@@ -110,15 +113,15 @@ export default function UeberUnsPage() {
                 />
               </span>
               <h3 className="text-xl font-bold text-[#EEC16B] whitespace-nowrap">
-                Mag. med. univ. Sof. Ibrahim Kerim
+                {t('ueberuns.chief2Name')}
               </h3>
               <p className="text-gray-700 mt-3 leading-relaxed">
-                Facharzt für Allgemeinmedizin mit Schwerpunkt auf <span className="font-semibold">chirurgischen Eingriffen und Diagnostik</span>. Dr. Ibrahim Kerim verbindet präzises Arbeiten mit viel Einfühlungsvermögen. Seine Patienten schätzen seine offene Kommunikation und seine sorgfältige Nachsorge.
+                {t('ueberuns.chief2Text')}
               </p>
               <ul className="text-gray-600 text-base mt-2 list-disc list-inside">
-                <li>Erfahrung in ambulanter und stationärer Versorgung</li>
-                <li>Regelmäßige Fortbildungen im Bereich Chirurgie</li>
-                <li>Spricht Deutsch, Bulgarisch, Türkisch, Englisch, Serbo-Kroatisch</li>
+                <li>{t('ueberuns.chief2List1')}</li>
+                <li>{t('ueberuns.chief2List2')}</li>
+                <li>{t('ueberuns.chief2List3')}</li>
               </ul>
             </div>
           </div>
@@ -129,10 +132,10 @@ export default function UeberUnsPage() {
       <section className="w-full bg-gray-50 text-black py-20">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-8 text-[#EEC16B]">
-            Unsere Ausstattung & Team
+            {t('ueberuns.equipmentTitle')}
           </h2>
           <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto mb-8">
-            Unsere Praxis ist mit moderner Medizintechnik ausgestattet: Ultraschall, EKG, Lungenfunktion, digitales Röntgen und vieles mehr. Unser freundliches Team aus medizinischen Fachangestellten sorgt für einen reibungslosen Ablauf und eine angenehme Atmosphäre.
+            {t('ueberuns.equipmentText')}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="flex flex-col items-center">
@@ -147,9 +150,9 @@ export default function UeberUnsPage() {
                   priority
                 />
               </span>
-              <div className="font-semibold text-[#EEC16B]">Georg Rumin</div>
-              <div className="text-gray-600 text-sm">Allgemeinmedizin / Akupunktur</div>
-              <div className="text-gray-500 text-xs mt-1">Spricht Deutsch, Polnisch</div>
+              <div className="font-semibold text-[#EEC16B]">{t('ueberuns.team1Name')}</div>
+              <div className="text-gray-600 text-sm">{t('ueberuns.team1Role')}</div>
+              <div className="text-gray-500 text-xs mt-1">{t('ueberuns.team1Lang')}</div>
             </div>
             <div className="flex flex-col items-center">
               <span className="w-40 h-40 mb-4 block relative rounded-full overflow-hidden border-4 border-white shadow-md transition-all">
@@ -163,9 +166,9 @@ export default function UeberUnsPage() {
                   priority
                 />
               </span>
-              <div className="font-semibold text-[#EEC16B]">Günay Najafova</div>
-              <div className="text-gray-600 text-sm">Allgemeinmedizin</div>
-              <div className="text-gray-500 text-xs mt-1">Spricht Deutsch, Türkisch, Aserbaidschanisch, Russisch</div>
+              <div className="font-semibold text-[#EEC16B]">{t('ueberuns.team2Name')}</div>
+              <div className="text-gray-600 text-sm">{t('ueberuns.team2Role')}</div>
+              <div className="text-gray-500 text-xs mt-1">{t('ueberuns.team2Lang')}</div>
             </div>
             <div className="flex flex-col items-center">
               <span className="w-40 h-40 mb-4 block relative rounded-full overflow-hidden border-4 border-white shadow-md transition-all">
@@ -179,9 +182,9 @@ export default function UeberUnsPage() {
                   priority
                 />
               </span>
-              <div className="font-semibold text-[#EEC16B]">Bülent Alkan</div>
-              <div className="text-gray-600 text-sm">Allgemeinmedizin</div>
-              <div className="text-gray-500 text-xs mt-1">Spricht Bulgarisch, Türkisch, Deutsch</div>
+              <div className="font-semibold text-[#EEC16B]">{t('ueberuns.team3Name')}</div>
+              <div className="text-gray-600 text-sm">{t('ueberuns.team3Role')}</div>
+              <div className="text-gray-500 text-xs mt-1">{t('ueberuns.team3Lang')}</div>
             </div>
           </div>
         </div>

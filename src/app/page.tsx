@@ -17,37 +17,37 @@ export default function HomePage() {
       <VideoSlider />
       <section className="w-full bg-black text-white py-16">
         {/* Social icons with zoom tower effect */}
-        <div className="flex justify-center mb-10 gap-6">
+  <div className="flex justify-center mb-10 gap-4">
           <a
-            href="https://www.facebook.com/your-facebook"
+            href="https://www.facebook.com/people/Praxis-Dr-Kerim/100093582685712/"
             target="_blank"
             rel="noopener noreferrer"
             className="group cursor-pointer"
           >
-            <div className="w-12 h-12 rounded-full border border-gray-600 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-125 group-hover:-translate-y-2 group-hover:border-[#EEC16B] group-hover:shadow-lg group-hover:shadow-[0_0_20px_#EEC16B] group-hover:bg-black/80 group-hover:text-[#EEC16B] hover:scale-110 hover:shadow-[0_0_20px_#EEC16B]">
+            <div className="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-110 group-hover:-translate-y-1 group-hover:border-[#EEC16B] group-hover:shadow-lg group-hover:shadow-[0_0_15px_#EEC16B] group-hover:bg-black/80 group-hover:text-[#EEC16B] hover:scale-105 hover:shadow-[0_0_15px_#EEC16B]">
               <Image
                 src="/images/facebook-circle.png"
                 alt="Facebook"
-                width={28}
-                height={28}
-                className="w-7 h-7 object-contain transition-transform duration-300 ease-out group-hover:scale-110"
+                width={24}
+                height={24}
+                className="w-6 h-6 object-contain transition-transform duration-300 ease-out group-hover:scale-110"
                 priority
               />
             </div>
           </a>
           <a
-            href="https://www.linkedin.com/your-linkedin"
+            href="https://www.linkedin.com/company/hausarztpraxis-dr-kerim/"
             target="_blank"
             rel="noopener noreferrer"
             className="group cursor-pointer"
           >
-            <div className="w-12 h-12 rounded-full border border-gray-600 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-125 group-hover:-translate-y-2 group-hover:border-[#EEC16B] group-hover:shadow-lg group-hover:shadow-[0_0_20px_#EEC16B] group-hover:bg-black/80 group-hover:text-[#EEC16B] hover:scale-110 hover:shadow-[0_0_20px_#EEC16B]">
+            <div className="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-110 group-hover:-translate-y-1 group-hover:border-[#EEC16B] group-hover:shadow-lg group-hover:shadow-[0_0_15px_#EEC16B] group-hover:bg-black/80 group-hover:text-[#EEC16B] hover:scale-105 hover:shadow-[0_0_15px_#EEC16B]">
               <Image
                 src="/images/linkedin-circle.png"
                 alt="LinkedIn"
-                width={28}
-                height={28}
-                className="w-7 h-7 object-contain transition-transform duration-300 ease-out group-hover:scale-110"
+                width={24}
+                height={24}
+                className="w-6 h-6 object-contain transition-transform duration-300 ease-out group-hover:scale-110"
                 priority
               />
             </div>

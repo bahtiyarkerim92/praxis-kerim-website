@@ -1,8 +1,11 @@
 
 "use client";
+
 import Image from "next/image";
+import { useI18n } from '../../i18n';
 
 export default function BeschneidungenPage() {
+  const { t } = useI18n();
   return (
     <main className="w-full">
       {/* Hero Section */}
@@ -19,13 +22,10 @@ export default function BeschneidungenPage() {
         </div>
         <div className="max-w-6xl mx-auto px-6 text-center mt-10">
           <h1 className="text-4xl md:text-5xl font-extrabold text-[#EEC16B] mb-6">
-            Beschneidungen
+            {t('beschneidungen.heroTitle')}
           </h1>
           <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-            In unserer Praxis führen wir fachgerechte Beschneidungen mit
-            modernsten Methoden und höchster medizinischer Sicherheit durch.
-            Dabei legen wir großen Wert auf eine individuelle Beratung, eine
-            schonende Durchführung und eine sorgfältige Nachsorge.
+            {t('beschneidungen.heroText')}
           </p>
         </div>
       </section>
@@ -34,7 +34,7 @@ export default function BeschneidungenPage() {
       <section className="w-full bg-gray-50 py-20">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-[#EEC16B]">
-            Medizinische & kulturelle Gründe
+            {t('beschneidungen.reasonsTitle')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 text-gray-700 text-lg leading-relaxed">
             <div className="space-y-4">
@@ -45,7 +45,7 @@ export default function BeschneidungenPage() {
                     <path d="M7 13.5l3 3 7-7" stroke="#EEC16B" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
-                <span>Medizinische Indikationen (z. B. Phimose, chronische Entzündungen)</span>
+                <span>{t('beschneidungen.reason1')}</span>
               </div>
               <div className="flex items-start gap-3 group">
                 <span className="mt-1 flex-shrink-0">
@@ -54,7 +54,7 @@ export default function BeschneidungenPage() {
                     <path d="M7 13.5l3 3 7-7" stroke="#EEC16B" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
-                <span>Verbesserte Hygiene</span>
+                <span>{t('beschneidungen.reason2')}</span>
               </div>
               <div className="flex items-start gap-3 group">
                 <span className="mt-1 flex-shrink-0">
@@ -63,7 +63,7 @@ export default function BeschneidungenPage() {
                     <path d="M7 13.5l3 3 7-7" stroke="#EEC16B" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
-                <span>Reduktion bestimmter Infektionsrisiken</span>
+                <span>{t('beschneidungen.reason3')}</span>
               </div>
             </div>
             <div className="space-y-4">
@@ -74,7 +74,7 @@ export default function BeschneidungenPage() {
                     <path d="M7 13.5l3 3 7-7" stroke="#EEC16B" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
-                <span>Kulturelle und religiöse Gründe</span>
+                <span>{t('beschneidungen.reason4')}</span>
               </div>
               <div className="flex items-start gap-3 group">
                 <span className="mt-1 flex-shrink-0">
@@ -83,7 +83,7 @@ export default function BeschneidungenPage() {
                     <path d="M7 13.5l3 3 7-7" stroke="#EEC16B" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
-                <span>Familien- und Traditionshintergründe</span>
+                <span>{t('beschneidungen.reason5')}</span>
               </div>
               <div className="flex items-start gap-3 group">
                 <span className="mt-1 flex-shrink-0">
@@ -92,7 +92,7 @@ export default function BeschneidungenPage() {
                     <path d="M7 13.5l3 3 7-7" stroke="#EEC16B" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
-                <span>Durchführung nach individuellen Wünschen</span>
+                <span>{t('beschneidungen.reason6')}</span>
               </div>
             </div>
           </div>
@@ -103,16 +103,10 @@ export default function BeschneidungenPage() {
       <section className="w-full bg-black text-white py-20">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-8 text-[#EEC16B]">
-            Ablauf & Sicherheit
+            {t('beschneidungen.processTitle')}
           </h2>
           <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed text-gray-300">
-            Vor dem Eingriff erfolgt eine ausführliche Beratung, in der alle
-            Fragen beantwortet werden. Der Eingriff selbst wird unter sterilen
-            Bedingungen und mit schonender Anästhesie durchgeführt.  
-            <br />
-            <br />
-            Wir legen größten Wert auf Sicherheit, Schmerzfreiheit und eine
-            vertrauensvolle Atmosphäre für unsere Patientinnen und Patienten.
+            {t('beschneidungen.processText')}
           </p>
         </div>
       </section>
@@ -122,17 +116,13 @@ export default function BeschneidungenPage() {
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#EEC16B]">
-              Nachsorge & Betreuung
+              {t('beschneidungen.aftercareTitle')}
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed mb-4">
-              Nach einer Beschneidung ist eine sorgfältige Nachsorge entscheidend.
-              Wir begleiten Sie mit regelmäßigen Kontrollen und stehen für
-              Fragen jederzeit zur Verfügung.
+              {t('beschneidungen.aftercareText1')}
             </p>
             <p className="text-lg text-gray-700 leading-relaxed">
-              Ziel ist eine schnelle Heilung, bestmögliche Ergebnisse und
-              größtmögliche Sicherheit. Bei Bedarf passen wir die Behandlung
-              individuell an den Heilungsverlauf an.
+              {t('beschneidungen.aftercareText2')}
             </p>
           </div>
           <div className="flex justify-center">
