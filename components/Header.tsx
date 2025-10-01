@@ -141,16 +141,16 @@ export default function Header() {
       <Link href="/" className="text-white text-base font-medium hover:text-[color:rgb(238,193,107)]" onClick={() => setMobileOpen(false)}>{t('nav.home')}</Link>
       <span className="text-white text-base font-medium cursor-default select-none">{t('nav.services')}</span>
       <div className="flex flex-col gap-1 pl-2">
-        <Link href="/uslugi/allgemeinmedizin" className="block px-2 py-2 text-white rounded-xl" onClick={() => setMobileOpen(false)}>
+        <Link href="/allgemeinmedizin" className="block px-2 py-2 text-white rounded-xl" onClick={() => setMobileOpen(false)}>
           <span className="transition-colors duration-150 hover:text-yellow-400">{t('allgemeinmedizin')}</span>
         </Link>
-        <Link href="/uslugi/innere-medizin" className="block px-2 py-2 text-white rounded-xl" onClick={() => setMobileOpen(false)}>
+        <Link href="/innere-medizin" className="block px-2 py-2 text-white rounded-xl" onClick={() => setMobileOpen(false)}>
           <span className="transition-colors duration-150 hover:text-yellow-400">{t('innere_medizin')}</span>
         </Link>
-        <Link href="/uslugi/chirurgie" className="block px-2 py-2 text-white rounded-xl" onClick={() => setMobileOpen(false)}>
+        <Link href="/chirurgie" className="block px-2 py-2 text-white rounded-xl" onClick={() => setMobileOpen(false)}>
           <span className="transition-colors duration-150 hover:text-yellow-400">{t('chirurgie')}</span>
         </Link>
-        <Link href="/uslugi/beschneidungen" className="block px-2 py-2 text-white rounded-xl" onClick={() => setMobileOpen(false)}>
+        <Link href="/beschneidungen" className="block px-2 py-2 text-white rounded-xl" onClick={() => setMobileOpen(false)}>
           <span className="transition-colors duration-150 hover:text-yellow-400">{t('beschneidungen')}</span>
         </Link>
       </div>

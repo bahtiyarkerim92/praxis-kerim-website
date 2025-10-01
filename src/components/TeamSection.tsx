@@ -64,10 +64,10 @@ export default function TeamSection() {
       {/* Grid */}
       <motion.div
   className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto px-6"
-  initial={typeof window !== 'undefined' && window.innerWidth >= 768 ? 'hidden' : undefined}
-  whileInView={typeof window !== 'undefined' && window.innerWidth >= 768 ? 'visible' : undefined}
-  viewport={typeof window !== 'undefined' && window.innerWidth >= 768 ? { once: true, amount: 0.2 } : undefined}
-  transition={typeof window !== 'undefined' && window.innerWidth >= 768 ? { staggerChildren: 0.25 } : undefined}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.2 }}
+  transition={{ staggerChildren: 0.25 }}
       >
         {team.map((doc, index) => (
           <motion.div

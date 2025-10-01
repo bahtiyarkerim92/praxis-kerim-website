@@ -12,7 +12,7 @@ export default function UeberUnsPage() {
           src="/images/chefaerzte.jpg"
           alt="Chefärzte Praxis Dr. Kerim"
           fill
-          className="object-cover w-full h-full"
+          className="object-cover w-full h-full transition-transform duration-700 md:scale-100 md:translate-y-0 scale-[1.12] -translate-y-4"
           priority
           sizes="100vw"
         />
@@ -132,7 +132,7 @@ export default function UeberUnsPage() {
       <section className="w-full bg-gray-50 text-black py-20">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-8 text-[#EEC16B]">
-            {t('ueberuns.equipmentTitle')}
+            Unsere Ausstattung und ärztliches Team
           </h2>
           <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto mb-8">
             {t('ueberuns.equipmentText')}
