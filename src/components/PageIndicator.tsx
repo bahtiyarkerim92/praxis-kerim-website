@@ -75,11 +75,6 @@ export default function PageIndicator() {
       style={{ top: `${top}px`, transform: 'translateY(-50%)', right: '18px' }}
     >
       <div className="flex flex-col items-center">
-        {/* Linie oben */}
-        <span
-          aria-hidden
-          className="block h-10 md:h-14 w-[1.5px] bg-gradient-to-b from-[#EEC16B] via-[#EEC16B40] to-transparent opacity-80"
-        />
         <span
           className="text-[#EEC16B] font-extrabold text-[0.85rem] md:text-[1rem] tracking-[0.25em] opacity-90"
           style={{
@@ -101,11 +96,6 @@ export default function PageIndicator() {
         >
           {name.toUpperCase()}
         </span>
-        {/* Linie unten */}
-        <span
-          aria-hidden
-          className="block h-10 md:h-14 w-[1.5px] bg-gradient-to-t from-[#EEC16B] via-[#EEC16B40] to-transparent opacity-80"
-        />
       </div>
     </div>
   );
