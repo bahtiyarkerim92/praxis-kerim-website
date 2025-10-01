@@ -36,7 +36,9 @@ export default function InnereMedizinPage() {
       <section className="w-full bg-gray-50 py-20">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-[#EEC16B]">
-            {t('innereMedizin.diagnosticsTitle')}
+            <span className="block md:inline">
+              {t('innereMedizin.diagnosticsTitle').replace('Funktionsuntersuchungen', 'Funktions-\nuntersuchungen')}
+            </span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 text-gray-700 text-lg leading-relaxed">
             <div className="space-y-4">
