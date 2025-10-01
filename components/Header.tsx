@@ -79,7 +79,7 @@ export default function Header() {
   }, []);
 
   return (
-  <header className={`sticky top-0 ${isSticky ? 'bg-black/90' : 'bg-black'} shadow-md z-50 w-full max-w-[1200px] mx-auto relative px-2 sm:px-4 ${isSticky ? '' : ''} md:rounded-3xl rounded-none`}>
+  <header className={`sticky top-0 bg-black shadow-md z-50 w-full max-w-[1200px] mx-auto relative px-2 sm:px-4 md:rounded-3xl rounded-none`}>
       <div className="flex items-center justify-between py-2 min-h-[0.4375rem]">
         <Link href="/">
           <Image src="/images/logo.png" alt="Praxis Kerim Logo" width={96} height={96} className="w-16 sm:w-20 md:w-24 h-auto" priority />
@@ -137,28 +137,28 @@ export default function Header() {
       </div>
       {/* Mobile menu */}
       {mobileOpen && (
-        <nav className={`flex flex-col gap-2 ${isSticky ? 'bg-black/90' : 'bg-black'} shadow-2xl p-4 absolute top-full left-0 w-full z-50 md:hidden rounded-none`}>
-          <Link href="/" className="text-white text-base font-medium hover:text-[color:rgb(238,193,107)]" onClick={() => setMobileOpen(false)}>{t('nav.home')}</Link>
-          <span className="text-white text-base font-medium cursor-default select-none">{t('nav.services')}</span>
-          <div className="flex flex-col gap-1 pl-2">
-            <Link href="/uslugi/allgemeinmedizin" className="block px-2 py-2 text-white rounded-xl" onClick={() => setMobileOpen(false)}>
-              <span className="transition-colors duration-150 hover:text-yellow-400">{t('allgemeinmedizin')}</span>
-            </Link>
-            <Link href="/uslugi/innere-medizin" className="block px-2 py-2 text-white rounded-xl" onClick={() => setMobileOpen(false)}>
-              <span className="transition-colors duration-150 hover:text-yellow-400">{t('innere_medizin')}</span>
-            </Link>
-            <Link href="/uslugi/chirurgie" className="block px-2 py-2 text-white rounded-xl" onClick={() => setMobileOpen(false)}>
-              <span className="transition-colors duration-150 hover:text-yellow-400">{t('chirurgie')}</span>
-            </Link>
-            <Link href="/uslugi/beschneidungen" className="block px-2 py-2 text-white rounded-xl" onClick={() => setMobileOpen(false)}>
-              <span className="transition-colors duration-150 hover:text-yellow-400">{t('beschneidungen')}</span>
-            </Link>
-          </div>
-          <Link href="/ueber-uns" className="text-white text-base font-medium hover:text-[color:rgb(238,193,107)]" onClick={() => setMobileOpen(false)}>{t('nav.about')}</Link>
-          <Link href="/kontakt" className="text-white text-base font-medium hover:text-[color:rgb(238,193,107)]" onClick={() => setMobileOpen(false)}>{t('nav.contact')}</Link>
-          <Link href="/terminbuchung" className="text-white text-base font-medium hover:text-[color:rgb(238,193,107)]" onClick={() => setMobileOpen(false)}>{t('nav.appointment')}</Link>
-          <Link href="/bestellung" className="text-white text-base font-medium hover:text-[color:rgb(238,193,107)]" onClick={() => setMobileOpen(false)}>{t('nav.orderForm')}</Link>
-        </nav>
+  <nav className="flex flex-col gap-2 bg-black p-4 fixed left-0 top-[64px] w-screen z-50 md:hidden rounded-b-xl">
+      <Link href="/" className="text-white text-base font-medium hover:text-[color:rgb(238,193,107)]" onClick={() => setMobileOpen(false)}>{t('nav.home')}</Link>
+      <span className="text-white text-base font-medium cursor-default select-none">{t('nav.services')}</span>
+      <div className="flex flex-col gap-1 pl-2">
+        <Link href="/uslugi/allgemeinmedizin" className="block px-2 py-2 text-white rounded-xl" onClick={() => setMobileOpen(false)}>
+          <span className="transition-colors duration-150 hover:text-yellow-400">{t('allgemeinmedizin')}</span>
+        </Link>
+        <Link href="/uslugi/innere-medizin" className="block px-2 py-2 text-white rounded-xl" onClick={() => setMobileOpen(false)}>
+          <span className="transition-colors duration-150 hover:text-yellow-400">{t('innere_medizin')}</span>
+        </Link>
+        <Link href="/uslugi/chirurgie" className="block px-2 py-2 text-white rounded-xl" onClick={() => setMobileOpen(false)}>
+          <span className="transition-colors duration-150 hover:text-yellow-400">{t('chirurgie')}</span>
+        </Link>
+        <Link href="/uslugi/beschneidungen" className="block px-2 py-2 text-white rounded-xl" onClick={() => setMobileOpen(false)}>
+          <span className="transition-colors duration-150 hover:text-yellow-400">{t('beschneidungen')}</span>
+        </Link>
+      </div>
+      <Link href="/ueber-uns" className="text-white text-base font-medium hover:text-[color:rgb(238,193,107)]" onClick={() => setMobileOpen(false)}>{t('nav.about')}</Link>
+      <Link href="/kontakt" className="text-white text-base font-medium hover:text-[color:rgb(238,193,107)]" onClick={() => setMobileOpen(false)}>{t('nav.contact')}</Link>
+      <Link href="/terminbuchung" className="text-white text-base font-medium hover:text-[color:rgb(238,193,107)]" onClick={() => setMobileOpen(false)}>{t('nav.appointment')}</Link>
+      <Link href="/bestellung" className="text-white text-base font-medium hover:text-[color:rgb(238,193,107)]" onClick={() => setMobileOpen(false)}>{t('nav.orderForm')}</Link>
+  </nav>
       )}
     </header>
   );

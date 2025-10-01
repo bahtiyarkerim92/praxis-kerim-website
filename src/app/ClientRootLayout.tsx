@@ -35,6 +35,9 @@ function InnerLayout({ children }: { children: React.ReactNode }) {
 export default function ClientRootLayout({ children, initialLang }: { children: React.ReactNode, initialLang: 'de' | 'bg' | 'tr' | 'en' | 'pl' }) {
   return (
     <html lang={initialLang}>
+      <head>
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}>
         <I18nProvider initialLang={initialLang}>
           <InnerLayout>{children}</InnerLayout>

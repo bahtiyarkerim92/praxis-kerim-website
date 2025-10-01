@@ -27,11 +27,11 @@ export default function LeistungenSection() {
 
       {/* Grid */}
       <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 max-w-7xl mx-auto px-6"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ staggerChildren: 0.25 }}
+  className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 max-w-7xl mx-auto px-6"
+  initial={typeof window !== 'undefined' && window.innerWidth >= 768 ? 'hidden' : undefined}
+  whileInView={typeof window !== 'undefined' && window.innerWidth >= 768 ? 'visible' : undefined}
+  viewport={typeof window !== 'undefined' && window.innerWidth >= 768 ? { once: true, amount: 0.3 } : undefined}
+  transition={typeof window !== 'undefined' && window.innerWidth >= 768 ? { staggerChildren: 0.25 } : undefined}
       >
         {/* Allgemeinmedizin */}
         <Link href="/allgemeinmedizin">
@@ -42,7 +42,7 @@ export default function LeistungenSection() {
                        hover:scale-110 hover:-translate-y-4 hover:shadow-[0_0_25px_#EEC16B] cursor-pointer"
           >
             {/* TODO: Ersetze 'allgemein.png' durch dein Icon */}
-            <span className="mb-6 w-44 h-44 relative block hidden md:block">
+            <span className="mb-6 w-44 h-44 relative block">
               <Image
                 src="/images/p1-icon.png"
                 alt="Allgemeinmedizin"
@@ -70,7 +70,7 @@ export default function LeistungenSection() {
                        hover:scale-110 hover:-translate-y-4 hover:shadow-[0_0_25px_#EEC16B] cursor-pointer"
           >
             {/* TODO: Ersetze 'innere.png' */}
-            <span className="mb-6 w-44 h-44 relative block hidden md:block">
+            <span className="mb-6 w-44 h-44 relative block">
               <Image
                 src="/images/p2-icon.png"
                 alt="Innere Medizin"
@@ -98,7 +98,7 @@ export default function LeistungenSection() {
                        hover:scale-110 hover:-translate-y-4 hover:shadow-[0_0_25px_#EEC16B] cursor-pointer"
           >
             {/* TODO: Ersetze 'chirurgie.png' */}
-            <span className="mb-6 w-44 h-44 relative block hidden md:block">
+            <span className="mb-6 w-44 h-44 relative block">
               <Image
                 src="/images/p3-icon.png"
                 alt="Chirurgie"
@@ -126,7 +126,7 @@ export default function LeistungenSection() {
                        hover:scale-110 hover:-translate-y-4 hover:shadow-[0_0_25px_#EEC16B] cursor-pointer"
           >
             {/* TODO: Ersetze 'beschneidung.png' */}
-            <span className="mb-6 w-44 h-44 relative block hidden md:block">
+            <span className="mb-6 w-44 h-44 relative block">
               <Image
                 src="/images/p4-icon.png"
                 alt="Beschneidungen"
