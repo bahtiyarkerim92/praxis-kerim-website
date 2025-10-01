@@ -8,13 +8,14 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
         {/* Logo + Beschreibung */}
   <div className="flex flex-col items-center md:items-start md:ml-8">
-          <Image
-            src="/images/logo.png" // dein Logo hier im public/images Ordner
-            alt="Praxis Dr. Kerim"
-            width={140}
-            height={140}
-            className="mb-4"
-          />
+            <Image
+              src="/images/logo.png" // dein Logo hier im public/images Ordner
+              alt="Praxis Dr. Kerim"
+              width={96}
+              height={96}
+              className="w-16 sm:w-20 md:w-24 h-auto mb-4"
+              priority
+            />
           <p className="text-gray-400 text-sm text-center md:text-left">
             Moderne hausärztliche Versorgung<br />
             nach höchsten Standards.

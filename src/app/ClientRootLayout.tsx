@@ -38,7 +38,7 @@ export default function ClientRootLayout({ children, initialLang }: { children: 
       <head>
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
       </head>
-  <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col bg-black`}>
+  <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`} style={{ backgroundColor: '#000' }}>
         <I18nProvider initialLang={initialLang}>
           <InnerLayout>{children}</InnerLayout>
         </I18nProvider>
