@@ -92,6 +92,9 @@ export default function PageIndicator() {
             userSelect: 'none',
             transition: 'text-shadow 0.4s cubic-bezier(.4,2,.6,1), color 0.3s',
             textShadow: '0 0 7px #EEC16B60, 0 0 1px #fff',
+            whiteSpace: 'nowrap',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
           }}
         >
           {name.toUpperCase()}
