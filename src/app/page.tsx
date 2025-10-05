@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
+import ImageSlider from '../components/ImageSlider';
 import Image from "next/image";
-import VideoSlider from '../components/VideoSlider';
 import LeistungenSection from '../components/LeistungenSection';
 import { useI18n } from '../i18n';
 import TeamSection from '../components/TeamSection'; // Importing TeamSection
@@ -11,10 +11,11 @@ import AboutSection from '../components/AboutSection'; // Importing AboutSection
 
 export default function HomePage() {
   const { t } = useI18n();
-  // VideoSlider no longer needs current, setCurrent, or handleEnded
+  // VideoSlider entfernt, nur Bilderslider bleibt
   return (
     <div className="w-full">
-      <VideoSlider />
+  {/* Bilderslider */}
+  <ImageSlider />
       <section className="w-full bg-black text-white py-16">
         {/* Social icons with zoom tower effect */}
   <div className="flex justify-center mb-10 gap-4">
@@ -24,7 +25,7 @@ export default function HomePage() {
             rel="noopener noreferrer"
             className="group cursor-pointer"
           >
-            <div className="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-110 group-hover:-translate-y-1 group-hover:border-[#EEC16B] group-hover:shadow-lg group-hover:shadow-[0_0_15px_#EEC16B] group-hover:bg-black/80 group-hover:text-[#EEC16B] hover:scale-105 hover:shadow-[0_0_15px_#EEC16B]">
+            <div className="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-110 group-hover:-translate-y-1 group-hover:border-[#EEC16B] group-hover:shadow-[0_0_15px_#EEC16B] group-hover:bg-black/80 group-hover:text-[#EEC16B] hover:scale-105 hover:shadow-[0_0_15px_#EEC16B]">
               <Image
                 src="/images/facebook-circle.png"
                 alt="Facebook"
@@ -41,7 +42,7 @@ export default function HomePage() {
             rel="noopener noreferrer"
             className="group cursor-pointer"
           >
-            <div className="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-110 group-hover:-translate-y-1 group-hover:border-[#EEC16B] group-hover:shadow-lg group-hover:shadow-[0_0_15px_#EEC16B] group-hover:bg-black/80 group-hover:text-[#EEC16B] hover:scale-105 hover:shadow-[0_0_15px_#EEC16B]">
+            <div className="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-110 group-hover:-translate-y-1 group-hover:border-[#EEC16B] group-hover:shadow-[0_0_15px_#EEC16B] group-hover:bg-black/80 group-hover:text-[#EEC16B] hover:scale-105 hover:shadow-[0_0_15px_#EEC16B]">
               <Image
                 src="/images/linkedin-circle.png"
                 alt="LinkedIn"
@@ -59,9 +60,12 @@ export default function HomePage() {
           <h1 className="text-4xl md:text-5xl font-extrabold tracking-wide mb-4">
             {t('homepage.title')}
           </h1>
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-wide mb-4">
+            {t('homepage.subtitle')}
+          </h2>
           <div className="w-28 h-1 bg-[#EEC16B] mx-auto rounded-full mb-6"></div>
           <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
-            {t('homepage.subtitle')}
+            {t('homepage.description')}
           </p>
         </div>
 

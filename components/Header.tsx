@@ -79,7 +79,7 @@ export default function Header() {
   }, []);
 
   return (
-  <header className={`sticky top-0 bg-black shadow-md z-50 w-full max-w-[1200px] mx-auto relative px-2 sm:px-4 md:rounded-3xl rounded-none`}>
+  <header className={`sticky top-0 bg-black shadow-md z-50 w-full max-w-[1200px] mx-auto px-2 sm:px-4 md:rounded-3xl rounded-none`}>
       <div className="flex items-center justify-between py-2 min-h-[0.4375rem]">
         <Link href="/">
           <Image src="/images/logo.png" alt="Praxis Kerim Logo" width={96} height={96} className="w-16 sm:w-20 md:w-24 h-auto" priority />

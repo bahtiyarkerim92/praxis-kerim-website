@@ -7,6 +7,7 @@ import Image from "next/image";
 
 import Link from "next/link";
 import { useI18n } from '../i18n';
+import { useEffect, useState } from "react";
 
 const cardVariants = {
   hidden: { opacity: 0, scale: 0.9, y: 50 },
@@ -15,6 +16,22 @@ const cardVariants = {
 
 export default function LeistungenSection() {
   const { t } = useI18n();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, []);
+
+  // Only set motion props on desktop, none on mobile
+  const motionProps = isMobile
+    ? {}
+    : {
+        initial: 'hidden',
+        whileInView: 'visible',
+        viewport: { once: true, amount: 0.3 },
+        transition: { staggerChildren: 0.25 },
+      };
+
   return (
     <section className="w-full bg-white text-black py-20">
       {/* Headline */}
@@ -28,10 +45,7 @@ export default function LeistungenSection() {
       {/* Grid */}
       <motion.div
         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 max-w-7xl mx-auto px-6"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ staggerChildren: 0.25 }}
+        {...motionProps}
       >
         {/* Allgemeinmedizin */}
         <Link href="/allgemeinmedizin">
@@ -45,7 +59,7 @@ export default function LeistungenSection() {
             <span className="mb-6 w-44 h-44 relative block">
               <Image
                 src="/images/p1-icon.png"
-                alt="Allgemeinmedizin"
+                alt="Allgemeinmedizin – Hausarzt Offenbach"
                 fill
                 sizes="80px"
                 className="object-contain transition-transform duration-300 group-hover:scale-125"
@@ -73,7 +87,7 @@ export default function LeistungenSection() {
             <span className="mb-6 w-44 h-44 relative block">
               <Image
                 src="/images/p2-icon.png"
-                alt="Innere Medizin"
+                alt="Innere Medizin – Hausarztpraxis Offenbach"
                 fill
                 sizes="80px"
                 className="object-contain transition-transform duration-300 group-hover:scale-125"
@@ -101,7 +115,7 @@ export default function LeistungenSection() {
             <span className="mb-6 w-44 h-44 relative block">
               <Image
                 src="/images/p3-icon.png"
-                alt="Chirurgie"
+                alt="Chirurgie – Hausarzt Offenbach"
                 fill
                 sizes="80px"
                 className="object-contain transition-transform duration-300 group-hover:scale-125"
@@ -129,7 +143,7 @@ export default function LeistungenSection() {
             <span className="mb-6 w-44 h-44 relative block">
               <Image
                 src="/images/p4-icon.png"
-                alt="Beschneidungen"
+                alt="Beschneidungen – Hausarztpraxis Offenbach"
                 fill
                 sizes="80px"
                 className="object-contain transition-transform duration-300 group-hover:scale-125"

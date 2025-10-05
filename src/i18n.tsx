@@ -24,12 +24,10 @@ const I18nContext = createContext<I18nContextType>({
 
 
 export function I18nProvider({ children, initialLang }: { children: React.ReactNode, initialLang?: Lang }) {
-  // Initialize from localStorage if available, else from initialLang (SSR cookie), else 'de'
+  // Hydration guard
+  const [hydrated, setHydrated] = React.useState(false);
+  // Initialize from SSR cookie or initialLang
   const getInitialLang = (): Lang => {
-    if (typeof window !== 'undefined') {
-      const stored = window.localStorage.getItem('lang');
-      if (stored && ['de','bg','tr','en','pl'].includes(stored)) return stored as Lang;
-    }
     if (initialLang && ['de','bg','tr','en','pl'].includes(initialLang)) return initialLang;
     return 'de';
   };
@@ -44,14 +42,16 @@ export function I18nProvider({ children, initialLang }: { children: React.ReactN
   };
   // On mount, sync state with localStorage (for SSR hydration)
   React.useEffect(() => {
-    const stored = window.localStorage.getItem('lang');
-    if (stored && ['de','bg','tr','en','pl'].includes(stored)) {
-      setLangState(stored as Lang);
+    setHydrated(true);
+    if (typeof window !== 'undefined') {
+      const stored = window.localStorage.getItem('lang');
+      if (stored && ['de','bg','tr','en','pl'].includes(stored)) {
+        setLangState(stored as Lang);
+      }
     }
-    // Only run once on mount
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const t = (key: string) => ((translations[lang] as Record<string, string>)[key]) || key;
+  if (!hydrated) return null; // Prevent hydration mismatch
   return (
     <I18nContext.Provider value={{ lang, setLang, t }}>
       {children}

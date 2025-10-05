@@ -130,8 +130,9 @@
 	"about.description": "At Dr. Kerim's practice, we offer modern family medical care to the highest scientific standards. Our international team provides comprehensive care – from prevention and diagnostics to acute and long-term care. We value personal attention, quick accessibility, and digital services such as video consultations and online orders.",
 	"about.orderForm": "Order Form",
 	"about.whatsappChannel": "WhatsApp Channel",
-	"homepage.title": "Dr. Kerim Practice",
-	"homepage.subtitle": "International family medical care to the highest scientific standard",
+	"homepage.title": "Praxis Dr. Kerim",
+	"homepage.subtitle": "Your Family Doctor in Offenbach",
+	"homepage.description": "International family medical care at the highest scientific standard. Book appointments, order forms and more at your family practice Dr. Kerim in Offenbach am Main.",
 	"footer.slogan1": "Modern family medical care",
 	"footer.slogan2": "to the highest standards.",
 	"footer.openingHours": "Opening Hours",
@@ -156,8 +157,8 @@
 	"nav.about": "About Us",
 	"nav.contact": "Contact",
 	"nav.appointment": "Book Appointment",
-	"hero.title": "Dr. Kerim Practice",
-	"hero.subtitle": "Family medical care with German standards in Bulgaria",
+		"hero.title": "Family Doctor Offenbach & Family Practice Offenbach - Dr. Kerim Practice",
+		"hero.subtitle": "Family Doctor Offenbach & Family Practice Offenbach - Family medical care with German standards in Bulgaria",
 	"home.servicesTitle": "Our Services",
 	"home.service1.title": "General Medicine",
 	"home.service1.desc": "Comprehensive care for all age groups.",
@@ -210,11 +211,10 @@
 		"kontakt.appointmentTitle": "Book an Appointment",
 		"kontakt.appointmentInfo": "We take time for your health. Book your appointment online – for check-ups, acute complaints or consultations. Our digital booking system enables quick and easy planning, minimizing waiting times.",
 		"kontakt.digitalTitle": "Digital Services",
-		"kontakt.digitalInfo": "Use our digital services for fast and uncomplicated care – order prescriptions, referrals or sick notes online or stay informed via our WhatsApp channel."
-,
-	"bestellung.heroTitle": "Order Forms",
+		"kontakt.digitalInfo": "Use our digital services for fast and uncomplicated care – order prescriptions, referrals or sick notes online or stay informed via our WhatsApp channel.",
+			"bestellung.heroTitle": "Order Forms",
 	"bestellung.infoTitle": "New ordering system in development",
 	"bestellung.infoText": "We are currently developing a new online system for ordering prescriptions, referrals, and sick notes.\nUntil then, please use the following contact options:",
 	"bestellung.emailButton": "E-mail",
 	"bestellung.phoneButton": "Phone: +49 69 870015360"
-}
+	}

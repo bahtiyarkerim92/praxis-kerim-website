@@ -12,7 +12,7 @@ export default function Footer() {
 				<div className="flex flex-col items-center md:items-start bg-black bg-opacity-80 rounded-2xl p-6">
 					<Image
 						src="/images/logo.png" // TODO: Dein Logo einfügen
-						alt="Praxis Dr. Kerim"
+						alt="Praxis Dr. Kerim – Hausarzt Offenbach"
 						width={140}
 						height={140}
 						className="mb-4"

@@ -1,0 +1,20 @@
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalOrganization",
+  "name": "Praxis Dr. Kerim",
+  "url": "https://praxiskerim.de/",
+  "logo": "https://praxiskerim.de/images/logo.PNG",
+  "image": "https://praxiskerim.de/images/slider-poster3.png",
+  "description": "Internationale hausärztliche Versorgung nach höchstem wissenschaftlichen Standard. Terminbuchung, Bestellformulare und mehr bei Praxis Dr. Kerim in Offenbach.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Jacques-Offenbach-Straße 12",
+    "addressLocality": "Offenbach am Main",
+    "postalCode": "63069",
+    "addressCountry": "DE"
+  },
+  "telephone": "+49 69 870015360",
+  "email": "info@praxiskerim.de",
+  "openingHours": "Mo-Do 07:30-12:00, 14:30-18:00; Fr 07:30-12:00",
+  "medicalSpecialty": ["GeneralPractice", "InternalMedicine", "Surgery"]
+}

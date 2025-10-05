@@ -63,11 +63,11 @@ export default function TeamSection() {
       </div>
       {/* Grid */}
       <motion.div
-  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto px-6"
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true, amount: 0.2 }}
-  transition={{ staggerChildren: 0.25 }}
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto px-6"
+  initial={typeof window !== 'undefined' && window.innerWidth < 768 ? undefined : 'hidden'}
+  whileInView={typeof window !== 'undefined' && window.innerWidth < 768 ? undefined : 'visible'}
+        viewport={typeof window !== 'undefined' && window.innerWidth < 768 ? undefined : { once: true, amount: 0.2 }}
+        transition={typeof window !== 'undefined' && window.innerWidth < 768 ? undefined : { staggerChildren: 0.25 }}
       >
         {team.map((doc, index) => (
           <motion.div
@@ -79,7 +79,7 @@ export default function TeamSection() {
               <span className="w-40 h-40 mb-6 block relative rounded-full overflow-hidden border-4 border-white shadow-md group-hover:shadow-[0_0_20px_#EEC16B] transition-all">
                 <Image
                   src={doc.image}
-                  alt={doc.name}
+                  alt={`${doc.name} – Hausarzt Offenbach`}
                   fill
                   style={{ objectFit: 'cover', objectPosition: 'top', borderRadius: '9999px' }}
                   className="absolute inset-0 w-full h-full scale-130 -translate-y-[10%]"
@@ -90,7 +90,7 @@ export default function TeamSection() {
             ) : (
               <Image
                 src={doc.image}
-                alt={doc.name}
+                alt={`${doc.name} – Hausarztpraxis Offenbach`}
                 width={160}
                 height={160}
                 className="w-40 h-40 object-cover object-top rounded-full mb-6 border-4 border-white shadow-md group-hover:shadow-[0_0_20px_#EEC16B] transition-all"
