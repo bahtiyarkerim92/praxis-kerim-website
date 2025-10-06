@@ -23,17 +23,15 @@ export default function LeistungenSection() {
   }, []);
 
   // Only set motion props on desktop, none on mobile
-  const motionProps = isMobile
-    ? {}
-    : {
-        initial: 'hidden',
-        whileInView: 'visible',
-        viewport: { once: true, amount: 0.3 },
-        transition: { staggerChildren: 0.25 },
-      };
+  const motionProps = {
+    initial: 'hidden',
+    whileInView: 'visible',
+    viewport: { once: true, amount: 0.3 },
+    transition: { staggerChildren: 0.25 },
+  };
 
   return (
-    <section className="w-full bg-white text-black py-20">
+  <section className="w-full bg-white text-black py-20">
       {/* Headline */}
       <div className="text-center mb-14">
         <h2 className="text-4xl md:text-5xl font-extrabold tracking-wide">
