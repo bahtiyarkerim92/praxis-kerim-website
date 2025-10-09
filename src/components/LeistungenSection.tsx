@@ -7,7 +7,7 @@ import Image from "next/image";
 
 import Link from "next/link";
 import { useI18n } from '../i18n';
-import { useEffect, useState } from "react";
+
 
 const cardVariants = {
   hidden: { opacity: 0, scale: 0.9, y: 50 },
@@ -16,11 +16,7 @@ const cardVariants = {
 
 export default function LeistungenSection() {
   const { t } = useI18n();
-  const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => {
-    setIsMobile(window.innerWidth < 768);
-  }, []);
 
   // Only set motion props on desktop, none on mobile
   const motionProps = {

@@ -1,7 +1,9 @@
 
 "use client";
 
+
 import { useI18n } from '../../i18n';
+import OrderForm from './OrderForm';
 
 export default function BestellungPage() {
   const { t } = useI18n();
@@ -44,6 +46,13 @@ export default function BestellungPage() {
               {t('bestellung.phoneButton')}
             </a>
           </div>
+        </div>
+      </section>
+      {/* Order Form Section */}
+      <section className="w-full bg-white text-black py-12">
+        <div className="max-w-2xl mx-auto px-6">
+          <h3 className="text-2xl font-bold mb-4 text-center text-[#EEC16B]">{t('bestellung.formTitle') || 'Rezept/Medikament bestellen'}</h3>
+          <OrderForm onSuccess={() => {}} />
         </div>
       </section>
     </main>

@@ -1,10 +1,17 @@
 
 "use client";
 
+
 import { useI18n } from "../../i18n";
+import BookingForm from "./BookingForm";
+import BookingCalendar from "./BookingCalendar";
+import React, { useState } from "react";
+
+import type { Slot } from "./types";
 
 export default function TerminbuchungPage() {
   const { t } = useI18n();
+  const [selectedSlot, setSelectedSlot] = useState<Slot | null>(null);
   return (
     <main className="w-full">
       {/* Hero */}
@@ -46,6 +53,25 @@ export default function TerminbuchungPage() {
               {t('terminbuchung.phoneButton')}
             </a>
           </div>
+        </div>
+      </section>
+      {/* Interaktiver Kalender & Buchung */}
+      <section className="w-full bg-white text-black py-12">
+        <div className="max-w-2xl mx-auto px-6">
+          <h3 className="text-2xl font-bold mb-4 text-center text-[#EEC16B]">{t('terminbuchung.formTitle') || 'Termin buchen'}</h3>
+          {!selectedSlot ? (
+            <BookingCalendar onSelectSlot={setSelectedSlot} />
+          ) : (
+            <div>
+              <div className="mb-4 p-4 bg-yellow-50 border border-yellow-200 rounded">
+                <div className="font-semibold text-yellow-700">Gewählter Termin:</div>
+                <div>{new Date(selectedSlot.when).toLocaleString("de-DE", { dateStyle: "full", timeStyle: "short" })}</div>
+                <div className="text-sm text-gray-600">Arzt: {selectedSlot.doctorName}</div>
+                <button className="mt-2 text-xs underline text-yellow-700" onClick={() => setSelectedSlot(null)}>anderen Termin wählen</button>
+              </div>
+              <BookingForm onSuccess={() => setSelectedSlot(null)} slot={selectedSlot} />
+            </div>
+          )}
         </div>
       </section>
     </main>

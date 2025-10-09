@@ -9,14 +9,23 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@types/bcrypt": "^6.0.0",
+    "axios": "^1.12.2",
+    "bcryptjs": "^3.0.2",
     "framer-motion": "^12.23.22",
+    "iron-session": "^8.0.4",
+    "mongoose": "^8.19.1",
     "next": "15.5.4",
+    "pdfkit": "^0.17.2",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-calendar": "^6.0.0",
+    "react-dom": "19.1.0",
+    "zod": "^4.1.12"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "@types/mongoose": "^5.11.96",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
