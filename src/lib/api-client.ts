@@ -8,6 +8,7 @@ interface ApiResponse<T = any> {
   doctors?: T;
   appointments?: T;
   appointment?: T;
+  availability?: T;
   message?: string;
   error?: string;
 }

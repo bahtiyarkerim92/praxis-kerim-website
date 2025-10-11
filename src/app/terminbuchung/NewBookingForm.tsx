@@ -84,6 +84,8 @@ export default function NewBookingForm({ onSuccess }: NewBookingFormProps) {
     }
 
     async function fetchSlots() {
+      if (!selectedDate) return; // Extra null check
+      
       setLoadingSlots(true);
       setError("");
       try {

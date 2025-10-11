@@ -98,10 +98,10 @@ const nextConfig: NextConfig = {
     ];
   },
 
-  // Experimental features
-  experimental: {
-    optimizeCss: true,
-  },
+  // Experimental features (disabled for build stability)
+  // experimental: {
+  //   optimizeCss: true,
+  // },
 };
 
 export default nextConfig;
