@@ -1,3 +1,19 @@
+# *
 User-agent: *
 Allow: /
+
+# Sitemap
 Sitemap: https://praxiskerim.de/sitemap.xml
+
+# Disallow API routes
+Disallow: /api/
+
+# Allow all pages
+Allow: /
+Allow: /terminbuchung
+Allow: /bestellung
+Allow: /ueber-uns
+Allow: /kontakt
+
+# Crawl delay
+Crawl-delay: 1

@@ -1,23 +1,57 @@
 import { NextResponse } from 'next/server';
-import { dbConnect } from '../../../lib/db';
-import Doctor from '../../../models/Doctor';
+
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3030';
 
 export async function GET() {
-  await dbConnect();
-  const doctors = await Doctor.find().sort({ name: 1 });
-  return NextResponse.json(doctors);
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/doctors`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.message || 'Failed to fetch doctors');
+    }
+
+    // Return the doctors array from the response
+    return NextResponse.json(data.doctors || data.data || []);
+  } catch (error) {
+    console.error('Error fetching doctors:', error);
+    return NextResponse.json(
+      { error: 'Failed to fetch doctors' },
+      { status: 500 }
+    );
+  }
 }
 
 export async function POST(req: Request) {
-  const { name, fachrichtung } = await req.json();
-  await dbConnect();
-  const d = await Doctor.create({ name, fachrichtung });
-  return NextResponse.json(d, { status: 201 });
-}
+  try {
+    const body = await req.json();
+    
+    const response = await fetch(`${API_BASE_URL}/api/doctors`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    });
 
-export async function DELETE(req: Request) {
-  const { id } = await req.json();
-  await dbConnect();
-  await Doctor.findByIdAndDelete(id);
-  return NextResponse.json({ ok: true });
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.message || 'Failed to create doctor');
+    }
+
+    return NextResponse.json(data, { status: 201 });
+  } catch (error) {
+    console.error('Error creating doctor:', error);
+    return NextResponse.json(
+      { error: 'Failed to create doctor' },
+      { status: 500 }
+    );
+  }
 }

@@ -1,0 +1,3 @@
+# This file ensures the data directory is tracked in git
+# The actual JSON data files are ignored via .gitignore
+

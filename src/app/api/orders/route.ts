@@ -1,48 +1,94 @@
 import { NextResponse } from 'next/server';
-import { dbConnect } from '../../../lib/db';
-import Order from '../../../models/Order';
-import { encrypt, decrypt } from '../../../lib/crypto';
-import { orderSchema } from '../../../lib/validators';
 
-export async function GET() {
-  await dbConnect();
-  const items = await Order.find().sort({ createdAt: -1 });
-  // Patientendaten entschlüsseln
-  const decrypted = items.map((order) => {
-    const patient: Record<string, string> = {};
-    for (const key of Object.keys(order.patient || {})) {
-      const value = (order.patient as Record<string, string>)[key];
-      if (value) patient[key] = decrypt(value);
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3030';
+
+export async function GET(req: Request) {
+  try {
+    const { searchParams } = new URL(req.url);
+    const status = searchParams.get('status');
+    
+    const params = new URLSearchParams();
+    if (status) params.append('status', status);
+    
+    const queryString = params.toString();
+    const url = `${API_BASE_URL}/api/orders${queryString ? `?${queryString}` : ''}`;
+    
+    const response = await fetch(url, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.message || 'Failed to fetch orders');
     }
-    return { ...order.toObject(), patient };
-  });
-  return NextResponse.json(decrypted);
+
+    return NextResponse.json(data.orders || data.data || []);
+  } catch (error) {
+    console.error('Error fetching orders:', error);
+    return NextResponse.json(
+      { error: 'Failed to fetch orders' },
+      { status: 500 }
+    );
+  }
 }
 
 export async function POST(req: Request) {
-  const body = await req.json();
-  const parsed = orderSchema.safeParse(body);
-  if (!parsed.success) return NextResponse.json(parsed.error.format(), { status: 400 });
-  await dbConnect();
-  // Patientendaten verschlüsseln
-  const encryptedPatient: Record<string, string> = {};
-  for (const key of Object.keys(parsed.data.patient)) {
-    const value = (parsed.data.patient as Record<string, string>)[key];
-    if (value) encryptedPatient[key] = encrypt(value);
+  try {
+    const body = await req.json();
+    
+    const response = await fetch(`${API_BASE_URL}/api/orders`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.message || 'Failed to create order');
+    }
+
+    return NextResponse.json(data, { status: 201 });
+  } catch (error: any) {
+    console.error('Error creating order:', error);
+    return NextResponse.json(
+      { error: error.message || 'Failed to create order' },
+      { status: 500 }
+    );
   }
-  const created = await Order.create({ ...parsed.data, patient: encryptedPatient });
-  // Patientendaten entschlüsseln für Response
-  const decryptedPatient: Record<string, string> = {};
-  for (const key of Object.keys(created.patient || {})) {
-    const value = (created.patient as Record<string, string>)[key];
-    if (value) decryptedPatient[key] = decrypt(value);
-  }
-  return NextResponse.json({ ...created.toObject(), patient: decryptedPatient }, { status: 201 });
 }
 
 export async function PATCH(req: Request) {
-  const { id, status } = await req.json();
-  await dbConnect();
-  const updated = await Order.findByIdAndUpdate(id, { $set: { status } }, { new: true });
-  return NextResponse.json(updated);
+  try {
+    const body = await req.json();
+    const { id, status } = body;
+    
+    const response = await fetch(`${API_BASE_URL}/api/orders/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ status }),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.message || 'Failed to update order');
+    }
+
+    return NextResponse.json(data);
+  } catch (error: any) {
+    console.error('Error updating order:', error);
+    return NextResponse.json(
+      { error: error.message || 'Failed to update order' },
+      { status: 500 }
+    );
+  }
 }
