@@ -1,5 +1,5 @@
 "use client";
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 import de from './locales/de.json';
 import bg from './locales/bg.json';
 import tr from './locales/tr.json';
@@ -8,8 +8,8 @@ import pl from './locales/pl.json';
 
 const translations = { de, bg, tr, en, pl };
 
+export type Lang = 'de' | 'bg' | 'tr' | 'en' | 'pl';
 
-type Lang = 'de' | 'bg' | 'tr' | 'en' | 'pl';
 interface I18nContextType {
   lang: Lang;
   setLang: (lang: Lang) => void;
@@ -22,36 +22,31 @@ const I18nContext = createContext<I18nContextType>({
   t: (key: string) => key,
 });
 
+export function I18nProvider({ children, initialLang }: { children: React.ReactNode; initialLang?: Lang }) {
+  const [lang, setLangState] = useState<Lang>(initialLang || 'de');
 
-export function I18nProvider({ children, initialLang }: { children: React.ReactNode, initialLang?: Lang }) {
-  // Hydration guard
-  const [hydrated, setHydrated] = React.useState(false);
-  // Initialize from SSR cookie or initialLang
-  const getInitialLang = (): Lang => {
-    if (initialLang && ['de','bg','tr','en','pl'].includes(initialLang)) return initialLang;
-    return 'de';
-  };
-  const [lang, setLangState] = useState<Lang>(getInitialLang());
-  // Persist to localStorage and cookie
   const setLang = (newLang: Lang) => {
     setLangState(newLang);
     if (typeof window !== 'undefined') {
-      window.localStorage.setItem('lang', newLang);
+      localStorage.setItem('lang', newLang);
       document.cookie = `lang=${newLang}; path=/; max-age=31536000`;
     }
   };
-  // On mount, sync state with localStorage (for SSR hydration)
-  React.useEffect(() => {
-    setHydrated(true);
+
+  useEffect(() => {
     if (typeof window !== 'undefined') {
-      const stored = window.localStorage.getItem('lang');
-      if (stored && ['de','bg','tr','en','pl'].includes(stored)) {
-        setLangState(stored as Lang);
+      const stored = localStorage.getItem('lang') as Lang | null;
+      if (stored && ['de', 'bg', 'tr', 'en', 'pl'].includes(stored)) {
+        setLangState(stored);
       }
     }
   }, []);
-  const t = (key: string) => ((translations[lang] as Record<string, string>)[key]) || key;
-  if (!hydrated) return null; // Prevent hydration mismatch
+
+  const t = (key: string): string => {
+    const value = (translations[lang] as Record<string, string>)[key];
+    return value || key;
+  };
+
   return (
     <I18nContext.Provider value={{ lang, setLang, t }}>
       {children}
@@ -59,6 +54,7 @@ export function I18nProvider({ children, initialLang }: { children: React.ReactN
   );
 }
 
-export function useI18n() {
+export function useI18n(): I18nContextType {
   return useContext(I18nContext);
 }
+

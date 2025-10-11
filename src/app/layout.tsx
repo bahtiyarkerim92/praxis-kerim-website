@@ -7,7 +7,19 @@ export async function generateMetadata(): Promise<Metadata> {
   const cookieStore = await cookies();
   const lang = (cookieStore.get('lang')?.value || 'de') as 'de' | 'bg' | 'tr' | 'en' | 'pl';
   
-  return generatePageMetadata('home', lang);
+  const metadata = generatePageMetadata('home', lang);
+  
+  return {
+    ...metadata,
+    icons: {
+      icon: [
+        { url: '/favicon.ico', sizes: 'any' },
+        { url: '/icon.svg', type: 'image/svg+xml' },
+      ],
+      apple: '/apple-touch-icon.png',
+    },
+    manifest: '/manifest.json',
+  };
 }
 
 export const viewport: Viewport = {
@@ -30,8 +42,8 @@ export default async function RootLayout({
   const doctorJsonLd = generateDoctorJsonLd();
   
   return (
-    <html lang={lang}>
-      <head>
+    <html lang={lang} suppressHydrationWarning>
+      <body suppressHydrationWarning>
         {/* JSON-LD Structured Data */}
         <script
           type="application/ld+json"
@@ -42,17 +54,6 @@ export default async function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(doctorJsonLd) }}
         />
         
-        {/* Preconnect to external domains */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        
-        {/* Favicon */}
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/manifest.json" />
-      </head>
-      <body>
         <ClientRootLayout initialLang={lang}>{children}</ClientRootLayout>
       </body>
     </html>

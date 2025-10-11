@@ -68,7 +68,8 @@ export default function PageIndicator() {
 
   // Schwelle: Nach x Pixeln (z.B. halbe Viewporthöhe) beginnt der Übergang zur Screenmitte
   // Bis headerHeight gescrollt ist, bewegt sich der Indicator pixelgenau mit, danach bleibt er fixiert
-  const top = headerHeight + (window.innerHeight - headerHeight) / 2 - Math.min(scrollY, headerHeight);
+  const viewportHeight = typeof window !== 'undefined' ? window.innerHeight : 800;
+  const top = headerHeight + (viewportHeight - headerHeight) / 2 - Math.min(scrollY, headerHeight);
   return (
     <div
       className={`hidden md:flex fixed right-0 z-[100] flex-col items-end pointer-events-none select-none transition-all duration-700 ${visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}
