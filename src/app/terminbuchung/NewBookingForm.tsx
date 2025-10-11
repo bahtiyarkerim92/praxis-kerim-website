@@ -95,7 +95,7 @@ export default function NewBookingForm({ onSuccess }: NewBookingFormProps) {
         
         console.log('📅 Selected date:', selectedDate, 'formatted as:', dateStr);
         
-        let url = `/api/appointments?status=frei&date=${dateStr}&doctorId=${selectedDoctorId}`;
+        const url = `/api/appointments?status=frei&date=${dateStr}&doctorId=${selectedDoctorId}`;
         
         const res = await fetch(url);
         if (!res.ok) throw new Error("Failed to fetch slots");
