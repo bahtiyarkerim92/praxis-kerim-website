@@ -20,9 +20,6 @@ export default function TerminbuchungPage() {
       {/* Booking Form Section */}
       <section className="w-full bg-gray-50 text-black py-12">
         <div className="max-w-6xl mx-auto px-6">
-          <h3 className="text-3xl font-bold mb-8 text-center text-[#EEC16B]">
-            {t('terminbuchung.formTitle') || 'Termin buchen'}
-          </h3>
           <NewBookingForm onSuccess={() => {
             // Handle success - maybe show a success message or redirect
             console.log("Booking successful!");

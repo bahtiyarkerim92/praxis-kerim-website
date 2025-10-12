@@ -7,6 +7,7 @@ import type { Slot } from "./types";
 interface Doctor {
   _id: string;
   name: string;
+  priority?: number;
   fachrichtung?: string;
 }
 
@@ -49,7 +50,18 @@ export default function NewBookingForm({ onSuccess }: NewBookingFormProps) {
         const res = await fetch("/api/doctors");
         if (!res.ok) throw new Error("Failed to fetch doctors");
         const data = await res.json();
-        setDoctors(data);
+        // Sort doctors by priority (ascending), then by name (A-Z)
+        const sortedDoctors = data.sort((a: Doctor, b: Doctor) => {
+          // First, sort by priority (lower number = higher priority)
+          const priorityA = a.priority || 999;
+          const priorityB = b.priority || 999;
+          if (priorityA !== priorityB) {
+            return priorityA - priorityB;
+          }
+          // If same priority, sort alphabetically by name
+          return a.name.localeCompare(b.name, 'de');
+        });
+        setDoctors(sortedDoctors);
       } catch (err) {
         console.error("Error fetching doctors:", err);
         setError("Fehler beim Laden der Ärzte");
