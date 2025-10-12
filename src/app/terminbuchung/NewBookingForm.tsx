@@ -534,10 +534,13 @@ export default function NewBookingForm({ onSuccess }: NewBookingFormProps) {
                       {t("terminbuchung.selectedSlot")}:
                     </div>
                     <div className="text-xl font-bold">
-                      {new Date(selectedSlot.when).toLocaleTimeString("de-DE", {
-                        hour: "2-digit",
-                        minute: "2-digit",
-                      })} Uhr
+                      {(() => {
+                        // Parse the UTC datetime and display the time correctly
+                        const slotDate = new Date(selectedSlot.when);
+                        const hours = slotDate.getUTCHours();
+                        const minutes = slotDate.getUTCMinutes();
+                        return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+                      })()} Uhr
                     </div>
                     <div className="text-sm text-gray-600 mt-2">
                       Arzt: {selectedSlot.doctorName}
@@ -570,10 +573,13 @@ export default function NewBookingForm({ onSuccess }: NewBookingFormProps) {
                         className="bg-yellow-100 hover:bg-yellow-200 text-yellow-900 font-semibold py-3 px-3 rounded shadow border border-yellow-300 transition-all hover:scale-105"
                       >
                         <div className="text-lg">
-                          {new Date(slot.when).toLocaleTimeString("de-DE", {
-                            hour: "2-digit",
-                            minute: "2-digit",
-                          })}
+                          {(() => {
+                            // Parse the UTC datetime and display the time correctly
+                            const slotDate = new Date(slot.when);
+                            const hours = slotDate.getUTCHours();
+                            const minutes = slotDate.getUTCMinutes();
+                            return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+                          })()}
                         </div>
                       </button>
                     ))}

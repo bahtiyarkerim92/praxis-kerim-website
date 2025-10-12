@@ -77,7 +77,13 @@ export default function BookingCalendar({ onSelectSlot }: BookingCalendarProps) 
                     onClick={() => onSelectSlot(slot)}
                     className="w-full bg-yellow-100 hover:bg-yellow-200 text-yellow-900 font-semibold py-2 px-4 rounded shadow border border-yellow-300 flex justify-between items-center"
                   >
-                    <span>{new Date(slot.when).toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" })}</span>
+                    <span>{(() => {
+                      // Parse the UTC datetime and display the time correctly
+                      const slotDate = new Date(slot.when);
+                      const hours = slotDate.getUTCHours();
+                      const minutes = slotDate.getUTCMinutes();
+                      return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+                    })()}</span>
                     <span className="text-sm text-gray-600">{slot.doctorName}</span>
                   </button>
                 </li>

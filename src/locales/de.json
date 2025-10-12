@@ -122,8 +122,8 @@
   "team.cem.note": "Privatarzt – nur Videosprechstunde",
   "terminbuchung.heroTitle": "Termin buchen",
   "terminbuchung.infoTitle": "Information zur Terminbuchung",
-  "terminbuchung.infoText1": "Um einen Termin zu buchen, nutzen Sie bitte die untenstehenden Kontaktmöglichkeiten.",
-  "terminbuchung.infoText2": "Sie können uns per WhatsApp, E-Mail oder Telefon erreichen.",
+  "terminbuchung.infoText1": "Um einen Termin zu buchen, können Sie auch die untenstehenden Kontaktmöglichkeiten nutzen.",
+  "terminbuchung.infoText2": "Sie können uns auch per WhatsApp, E-Mail oder Telefon erreichen.",
   "terminbuchung.whatsappButton": "Per WhatsApp schreiben",
   "terminbuchung.emailButton": "E-Mail senden",
   "terminbuchung.phoneButton": "Anrufen",
@@ -269,5 +269,8 @@
   "bestellung.submitting": "Wird gesendet...",
   "bestellung.success": "Bestellung erfolgreich gesendet!",
   "bestellung.error": "Fehler beim Senden der Bestellung",
-  "bestellung.selectAtLeastOne": "Bitte wählen Sie mindestens eine Option aus"
+  "bestellung.selectAtLeastOne": "Bitte wählen Sie mindestens eine Option aus",
+  "bestellung.contactTitle": "Information zu Bestellungen",
+  "bestellung.contactText1": "Um eine Bestellung abzugeben, können Sie auch die untenstehenden Kontaktmöglichkeiten nutzen.",
+  "bestellung.contactText2": "Sie können uns auch per WhatsApp, E-Mail oder Telefon erreichen."
 }
