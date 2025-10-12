@@ -271,5 +271,19 @@
 	"bestellung.selectAtLeastOne": "Please select at least one option",
 	"bestellung.contactTitle": "Order Information",
 	"bestellung.contactText1": "To place an order, you can also use the contact options below.",
-	"bestellung.contactText2": "You can also contact us via WhatsApp, email, or phone."
+	"bestellung.contactText2": "You can also contact us via WhatsApp, email, or phone.",
+	"validation.required.name": "Name is required",
+	"validation.required.email": "Email is required",
+	"validation.invalid.email": "Invalid email address",
+	"validation.required.birthdate": "Date of birth is required",
+	"validation.required.phone": "Phone number is required",
+	"validation.required.address": "Address is required",
+	"validation.required.insuranceNumber": "Insurance number is required",
+	"validation.insurance.format": "Format: 1 letter + 9 digits (e.g. A123456789)",
+	"validation.required.firstName": "First name is required",
+	"validation.required.lastName": "Last name is required",
+	"validation.required.street": "Street is required",
+	"validation.required.houseNumber": "House number is required",
+	"validation.required.zipCode": "ZIP code is required",
+	"validation.required.city": "City is required"
 	}

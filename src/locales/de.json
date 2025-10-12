@@ -272,5 +272,19 @@
   "bestellung.selectAtLeastOne": "Bitte wählen Sie mindestens eine Option aus",
   "bestellung.contactTitle": "Information zu Bestellungen",
   "bestellung.contactText1": "Um eine Bestellung abzugeben, können Sie auch die untenstehenden Kontaktmöglichkeiten nutzen.",
-  "bestellung.contactText2": "Sie können uns auch per WhatsApp, E-Mail oder Telefon erreichen."
+  "bestellung.contactText2": "Sie können uns auch per WhatsApp, E-Mail oder Telefon erreichen.",
+  "validation.required.name": "Name ist erforderlich",
+  "validation.required.email": "E-Mail ist erforderlich",
+  "validation.invalid.email": "Ungültige E-Mail-Adresse",
+  "validation.required.birthdate": "Geburtsdatum ist erforderlich",
+  "validation.required.phone": "Telefonnummer ist erforderlich",
+  "validation.required.address": "Adresse ist erforderlich",
+  "validation.required.insuranceNumber": "Versicherungsnummer ist erforderlich",
+  "validation.insurance.format": "Format: 1 Buchstabe + 9 Ziffern (z.B. A123456789)",
+  "validation.required.firstName": "Vorname ist erforderlich",
+  "validation.required.lastName": "Nachname ist erforderlich",
+  "validation.required.street": "Straße ist erforderlich",
+  "validation.required.houseNumber": "Hausnummer ist erforderlich",
+  "validation.required.zipCode": "PLZ ist erforderlich",
+  "validation.required.city": "Stadt ist erforderlich"
 }

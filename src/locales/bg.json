@@ -272,5 +272,19 @@
 	"bestellung.selectAtLeastOne": "Моля, изберете поне една опция",
 	"bestellung.contactTitle": "Информация за поръчки",
 	"bestellung.contactText1": "За да направите поръчка, можете също да използвате посочените по-долу начини за контакт.",
-	"bestellung.contactText2": "Можете също да се свържете с нас чрез WhatsApp, имейл или телефон."
+	"bestellung.contactText2": "Можете също да се свържете с нас чрез WhatsApp, имейл или телефон.",
+	"validation.required.name": "Име е задължително",
+	"validation.required.email": "Имейл е задължителен",
+	"validation.invalid.email": "Невалиден имейл адрес",
+	"validation.required.birthdate": "Дата на раждане е задължителна",
+	"validation.required.phone": "Телефонен номер е задължителен",
+	"validation.required.address": "Адрес е задължителен",
+	"validation.required.insuranceNumber": "Номер на застраховка е задължителен",
+	"validation.insurance.format": "Формат: 1 буква + 9 цифри (напр. A123456789)",
+	"validation.required.firstName": "Име е задължително",
+	"validation.required.lastName": "Фамилия е задължителна",
+	"validation.required.street": "Улица е задължителна",
+	"validation.required.houseNumber": "Номер на къща е задължителен",
+	"validation.required.zipCode": "Пощенски код е задължителен",
+	"validation.required.city": "Град е задължителен"
 }

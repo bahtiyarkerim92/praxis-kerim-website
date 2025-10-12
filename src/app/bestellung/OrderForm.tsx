@@ -36,53 +36,53 @@ export default function OrderForm({ onSuccess }: { onSuccess: () => void }) {
     switch (name) {
       case "vorname":
         if (!value || (typeof value === "string" && value.trim() === "")) {
-          error = "Vorname ist erforderlich";
+          error = t("validation.required.firstName");
         }
         break;
       case "nachname":
         if (!value || (typeof value === "string" && value.trim() === "")) {
-          error = "Nachname ist erforderlich";
+          error = t("validation.required.lastName");
         }
         break;
       case "telefon":
         if (!value || (typeof value === "string" && value.trim() === "")) {
-          error = "Telefonnummer ist erforderlich";
+          error = t("validation.required.phone");
         }
         break;
       case "email":
         if (!value || (typeof value === "string" && value.trim() === "")) {
-          error = "E-Mail ist erforderlich";
+          error = t("validation.required.email");
         } else if (typeof value === "string" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
-          error = "Ungültige E-Mail-Adresse";
+          error = t("validation.invalid.email");
         }
         break;
       case "strasse":
         if (!value || (typeof value === "string" && value.trim() === "")) {
-          error = "Straße ist erforderlich";
+          error = t("validation.required.street");
         }
         break;
       case "hausnummer":
         if (!value || (typeof value === "string" && value.trim() === "")) {
-          error = "Hausnummer ist erforderlich";
+          error = t("validation.required.houseNumber");
         }
         break;
       case "plz":
         if (!value || (typeof value === "string" && value.trim() === "")) {
-          error = "PLZ ist erforderlich";
+          error = t("validation.required.zipCode");
         }
         break;
       case "stadt":
         if (!value || (typeof value === "string" && value.trim() === "")) {
-          error = "Stadt ist erforderlich";
+          error = t("validation.required.city");
         }
         break;
       case "versicherungsnummer":
         if (!value || (typeof value === "string" && value.trim() === "")) {
-          error = "Versicherungsnummer ist erforderlich";
+          error = t("validation.required.insuranceNumber");
         } else if (typeof value === "string" && formData.versicherungsart === "gesetzlich") {
           const insuranceRegex = /^[A-Z]\d{9}$/;
           if (!insuranceRegex.test(value)) {
-            error = "Format: 1 Buchstabe + 9 Ziffern (z.B. A123456789)";
+            error = t("validation.insurance.format");
           }
         }
         break;
@@ -127,7 +127,7 @@ export default function OrderForm({ onSuccess }: { onSuccess: () => void }) {
     if (formData.versicherungsart === "gesetzlich") {
       const insuranceRegex = /^[A-Z]\d{9}$/;
       if (!insuranceRegex.test(formData.versicherungsnummer)) {
-        setError("Versicherungsnummer für gesetzliche Versicherung muss aus 1 Buchstaben und 9 Ziffern bestehen (z.B. A123456789)");
+        setError(t("validation.insurance.format"));
         return;
       }
     }

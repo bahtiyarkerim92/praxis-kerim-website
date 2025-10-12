@@ -149,38 +149,38 @@ export default function NewBookingForm({ onSuccess }: NewBookingFormProps) {
     switch (name) {
       case "name":
         if (!value || (typeof value === "string" && value.trim() === "")) {
-          error = "Name ist erforderlich";
+          error = t("validation.required.name");
         }
         break;
       case "email":
         if (!value || (typeof value === "string" && value.trim() === "")) {
-          error = "E-Mail ist erforderlich";
+          error = t("validation.required.email");
         } else if (typeof value === "string" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
-          error = "Ungültige E-Mail-Adresse";
+          error = t("validation.invalid.email");
         }
         break;
       case "geburtsdatum":
         if (!value || (typeof value === "string" && value.trim() === "")) {
-          error = "Geburtsdatum ist erforderlich";
+          error = t("validation.required.birthdate");
         }
         break;
       case "telefon":
         if (!value || (typeof value === "string" && value.trim() === "")) {
-          error = "Telefonnummer ist erforderlich";
+          error = t("validation.required.phone");
         }
         break;
       case "adresse":
         if (!value || (typeof value === "string" && value.trim() === "")) {
-          error = "Adresse ist erforderlich";
+          error = t("validation.required.address");
         }
         break;
       case "versicherungsnummer":
         if (!value || (typeof value === "string" && value.trim() === "")) {
-          error = "Versicherungsnummer ist erforderlich";
+          error = t("validation.required.insuranceNumber");
         } else if (typeof value === "string" && formData.versicherungsart === "gesetzlich") {
           const insuranceRegex = /^[A-Z]\d{9}$/;
           if (!insuranceRegex.test(value)) {
-            error = "Format: 1 Buchstabe + 9 Ziffern (z.B. A123456789)";
+            error = t("validation.insurance.format");
           }
         }
         break;
@@ -224,7 +224,7 @@ export default function NewBookingForm({ onSuccess }: NewBookingFormProps) {
     if (formData.versicherungsart === "gesetzlich") {
       const insuranceRegex = /^[A-Z]\d{9}$/;
       if (!insuranceRegex.test(formData.versicherungsnummer)) {
-        setError("Versicherungsnummer für gesetzliche Versicherung muss aus 1 Buchstaben und 9 Ziffern bestehen (z.B. A123456789)");
+        setError(t("validation.insurance.format"));
         return;
       }
     }

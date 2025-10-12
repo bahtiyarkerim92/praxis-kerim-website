@@ -271,6 +271,20 @@
   "bestellung.selectAtLeastOne": "Lütfen en az bir seçenek seçin",
   "bestellung.contactTitle": "Sipariş Bilgileri",
   "bestellung.contactText1": "Sipariş vermek için aşağıdaki iletişim yollarını da kullanabilirsiniz.",
-  "bestellung.contactText2": "Bize WhatsApp, e-posta veya telefonla da ulaşabilirsiniz."
+  "bestellung.contactText2": "Bize WhatsApp, e-posta veya telefonla da ulaşabilirsiniz.",
+  "validation.required.name": "Ad gereklidir",
+  "validation.required.email": "E-posta gereklidir",
+  "validation.invalid.email": "Geçersiz e-posta adresi",
+  "validation.required.birthdate": "Doğum tarihi gereklidir",
+  "validation.required.phone": "Telefon numarası gereklidir",
+  "validation.required.address": "Adres gereklidir",
+  "validation.required.insuranceNumber": "Sigorta numarası gereklidir",
+  "validation.insurance.format": "Format: 1 harf + 9 rakam (örn. A123456789)",
+  "validation.required.firstName": "Ad gereklidir",
+  "validation.required.lastName": "Soyad gereklidir",
+  "validation.required.street": "Sokak gereklidir",
+  "validation.required.houseNumber": "Ev numarası gereklidir",
+  "validation.required.zipCode": "Posta kodu gereklidir",
+  "validation.required.city": "Şehir gereklidir"
 }
 
