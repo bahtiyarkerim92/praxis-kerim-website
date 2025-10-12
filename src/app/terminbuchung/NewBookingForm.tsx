@@ -16,7 +16,19 @@ interface NewBookingFormProps {
 }
 
 export default function NewBookingForm({ onSuccess }: NewBookingFormProps) {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
+  
+  // Get locale string based on current language
+  const getLocale = () => {
+    switch(lang) {
+      case 'de': return 'de-DE';
+      case 'en': return 'en-US';
+      case 'bg': return 'bg-BG';
+      case 'tr': return 'tr-TR';
+      case 'pl': return 'pl-PL';
+      default: return 'de-DE';
+    }
+  };
   const [doctors, setDoctors] = useState<Doctor[]>([]);
   const [selectedDoctorId, setSelectedDoctorId] = useState<string>("");
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
@@ -339,7 +351,7 @@ export default function NewBookingForm({ onSuccess }: NewBookingFormProps) {
   };
 
   if (loadingDoctors) {
-    return <div className="text-center py-8">Lädt Ärzte...</div>;
+    return <div className="text-center py-8">{t("calendar.loading")}</div>;
   }
 
   return (
@@ -385,7 +397,7 @@ export default function NewBookingForm({ onSuccess }: NewBookingFormProps) {
                     onClick={goToPreviousMonth}
                     disabled={!canGoPrevious()}
                     className="p-2 rounded hover:bg-gray-100 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
-                    title="Vorheriger Monat"
+                    title={t("calendar.previousMonth")}
                   >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -393,14 +405,14 @@ export default function NewBookingForm({ onSuccess }: NewBookingFormProps) {
                   </button>
                   
                   <h4 className="font-semibold text-gray-700">
-                    {currentMonth.toLocaleDateString("de-DE", { month: "long", year: "numeric" })}
+                    {currentMonth.toLocaleDateString(getLocale(), { month: "long", year: "numeric" })}
                   </h4>
                   
                   <button
                     type="button"
                     onClick={goToNextMonth}
                     className="p-2 rounded hover:bg-gray-100 transition-colors"
-                    title="Nächster Monat"
+                    title={t("calendar.nextMonth")}
                   >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -410,7 +422,15 @@ export default function NewBookingForm({ onSuccess }: NewBookingFormProps) {
                 
                 <div className="grid grid-cols-7 gap-1">
                   {/* Weekday headers */}
-                  {['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'].map((day) => (
+                  {[
+                    t("calendar.weekday.sun"),
+                    t("calendar.weekday.mon"),
+                    t("calendar.weekday.tue"),
+                    t("calendar.weekday.wed"),
+                    t("calendar.weekday.thu"),
+                    t("calendar.weekday.fri"),
+                    t("calendar.weekday.sat")
+                  ].map((day) => (
                     <div key={day} className="text-center font-semibold text-gray-600 text-xs py-1">
                       {day}
                     </div>
@@ -491,11 +511,11 @@ export default function NewBookingForm({ onSuccess }: NewBookingFormProps) {
                 <div className="mt-4 space-y-1 text-xs text-gray-600">
                   <div className="flex items-center gap-2">
                     <div className="w-4 h-4 bg-blue-50 border border-blue-300 rounded"></div>
-                    <span>📹 Freitag (Nur Videosprechstunde)</span>
+                    <span>{t("calendar.legend.fridayVideoOnly")}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-4 h-4 bg-gray-200 border border-gray-300 rounded"></div>
-                    <span>Wochenende / Feiertag</span>
+                    <span>{t("calendar.legend.weekendHoliday")}</span>
                   </div>
                 </div>
               </div>
@@ -505,9 +525,9 @@ export default function NewBookingForm({ onSuccess }: NewBookingFormProps) {
                 <h4 className="font-semibold text-gray-700 mb-3">
                   {selectedDate ? (
                     <>
-                      Verfügbare Zeiten
+                      {t("calendar.availableTimes")}
                       <div className="text-sm font-normal text-gray-600 mt-1">
-                        {selectedDate.toLocaleDateString("de-DE", {
+                        {selectedDate.toLocaleDateString(getLocale(), {
                           weekday: "long",
                           day: "numeric",
                           month: "long",
@@ -515,7 +535,7 @@ export default function NewBookingForm({ onSuccess }: NewBookingFormProps) {
                       </div>
                     </>
                   ) : (
-                    "Bitte wählen Sie ein Datum"
+                    t("calendar.selectDate")
                   )}
                 </h4>
 
@@ -538,7 +558,7 @@ export default function NewBookingForm({ onSuccess }: NewBookingFormProps) {
 
                 {!selectedDate ? (
                   <div className="text-gray-400 text-center py-8 text-sm">
-                    ← Wählen Sie ein Datum im Kalender
+                    {t("calendar.selectDateInCalendar")}
                   </div>
                 ) : selectedSlot ? (
                   <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">

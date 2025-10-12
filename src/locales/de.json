@@ -286,5 +286,20 @@
   "validation.required.street": "Straße ist erforderlich",
   "validation.required.houseNumber": "Hausnummer ist erforderlich",
   "validation.required.zipCode": "PLZ ist erforderlich",
-  "validation.required.city": "Stadt ist erforderlich"
+  "validation.required.city": "Stadt ist erforderlich",
+  "calendar.weekday.sun": "So",
+  "calendar.weekday.mon": "Mo",
+  "calendar.weekday.tue": "Di",
+  "calendar.weekday.wed": "Mi",
+  "calendar.weekday.thu": "Do",
+  "calendar.weekday.fri": "Fr",
+  "calendar.weekday.sat": "Sa",
+  "calendar.previousMonth": "Vorheriger Monat",
+  "calendar.nextMonth": "Nächster Monat",
+  "calendar.availableTimes": "Verfügbare Zeiten",
+  "calendar.selectDate": "Bitte wählen Sie ein Datum",
+  "calendar.selectDateInCalendar": "← Wählen Sie ein Datum im Kalender",
+  "calendar.legend.fridayVideoOnly": "📹 Freitag (Nur Videosprechstunde)",
+  "calendar.legend.weekendHoliday": "Wochenende / Feiertag",
+  "calendar.loading": "Lädt Ärzte..."
 }

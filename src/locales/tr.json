@@ -285,6 +285,21 @@
   "validation.required.street": "Sokak gereklidir",
   "validation.required.houseNumber": "Ev numarası gereklidir",
   "validation.required.zipCode": "Posta kodu gereklidir",
-  "validation.required.city": "Şehir gereklidir"
+  "validation.required.city": "Şehir gereklidir",
+  "calendar.weekday.sun": "Paz",
+  "calendar.weekday.mon": "Pzt",
+  "calendar.weekday.tue": "Sal",
+  "calendar.weekday.wed": "Çar",
+  "calendar.weekday.thu": "Per",
+  "calendar.weekday.fri": "Cum",
+  "calendar.weekday.sat": "Cmt",
+  "calendar.previousMonth": "Önceki Ay",
+  "calendar.nextMonth": "Sonraki Ay",
+  "calendar.availableTimes": "Müsait Saatler",
+  "calendar.selectDate": "Lütfen bir tarih seçin",
+  "calendar.selectDateInCalendar": "← Takvimden bir tarih seçin",
+  "calendar.legend.fridayVideoOnly": "📹 Cuma (Sadece video görüşme)",
+  "calendar.legend.weekendHoliday": "Hafta sonu / Tatil",
+  "calendar.loading": "Doktorlar yükleniyor..."
 }
 

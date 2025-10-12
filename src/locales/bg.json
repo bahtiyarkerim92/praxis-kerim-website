@@ -286,5 +286,20 @@
 	"validation.required.street": "Улица е задължителна",
 	"validation.required.houseNumber": "Номер на къща е задължителен",
 	"validation.required.zipCode": "Пощенски код е задължителен",
-	"validation.required.city": "Град е задължителен"
+	"validation.required.city": "Град е задължителен",
+	"calendar.weekday.sun": "Нд",
+	"calendar.weekday.mon": "Пн",
+	"calendar.weekday.tue": "Вт",
+	"calendar.weekday.wed": "Ср",
+	"calendar.weekday.thu": "Чт",
+	"calendar.weekday.fri": "Пт",
+	"calendar.weekday.sat": "Сб",
+	"calendar.previousMonth": "Предишен месец",
+	"calendar.nextMonth": "Следващ месец",
+	"calendar.availableTimes": "Свободни часове",
+	"calendar.selectDate": "Моля, изберете дата",
+	"calendar.selectDateInCalendar": "← Изберете дата в календара",
+	"calendar.legend.fridayVideoOnly": "📹 Петък (Само видео консултации)",
+	"calendar.legend.weekendHoliday": "Уикенд / Празник",
+	"calendar.loading": "Зареждане на лекари..."
 }

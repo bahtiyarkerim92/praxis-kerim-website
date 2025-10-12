@@ -285,5 +285,20 @@
 	"validation.required.street": "Street is required",
 	"validation.required.houseNumber": "House number is required",
 	"validation.required.zipCode": "ZIP code is required",
-	"validation.required.city": "City is required"
+	"validation.required.city": "City is required",
+	"calendar.weekday.sun": "Sun",
+	"calendar.weekday.mon": "Mon",
+	"calendar.weekday.tue": "Tue",
+	"calendar.weekday.wed": "Wed",
+	"calendar.weekday.thu": "Thu",
+	"calendar.weekday.fri": "Fri",
+	"calendar.weekday.sat": "Sat",
+	"calendar.previousMonth": "Previous Month",
+	"calendar.nextMonth": "Next Month",
+	"calendar.availableTimes": "Available Times",
+	"calendar.selectDate": "Please select a date",
+	"calendar.selectDateInCalendar": "← Select a date in the calendar",
+	"calendar.legend.fridayVideoOnly": "📹 Friday (Video consultation only)",
+	"calendar.legend.weekendHoliday": "Weekend / Holiday",
+	"calendar.loading": "Loading doctors..."
 	}
