@@ -48,7 +48,7 @@ export default async function RootLayout({
         <link rel="dns-prefetch" href="//praxiskerim.de" />
         <link rel="preconnect" href="https://praxiskerim.de" crossOrigin="anonymous" />
         
-        {/* Preload critical images with highest priority */}
+        {/* Preload critical images with highest priority - Now JPEG compressed */}
         <link rel="preload" as="image" href="/images/slider-poster.png" fetchPriority="high" />
         <link rel="preload" as="image" href="/images/slider-poster2.png" fetchPriority="high" />
         <link rel="preload" as="image" href="/images/slider-poster3.png" fetchPriority="high" />
