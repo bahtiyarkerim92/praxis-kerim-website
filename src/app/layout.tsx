@@ -55,10 +55,10 @@ export default async function RootLayout({
         <link rel="preload" as="image" href="/images/vid4-poster.png" fetchPriority="high" />
         
         {/* Preload Next.js image optimization endpoint - WebP/AVIF optimized */}
-        <link rel="preload" as="image" href="/_next/image?url=%2Fimages%2Fslider-poster.png&w=1920&q=75" fetchPriority="high" />
-        <link rel="preload" as="image" href="/_next/image?url=%2Fimages%2Fslider-poster2.png&w=1920&q=75" fetchPriority="high" />
-        <link rel="preload" as="image" href="/_next/image?url=%2Fimages%2Fslider-poster3.png&w=1920&q=75" fetchPriority="high" />
-        <link rel="preload" as="image" href="/_next/image?url=%2Fimages%2Fvid4-poster.png&w=1920&q=75" fetchPriority="high" />
+        <link rel="preload" as="image" href="/_next/image?url=%2Fimages%2Fslider-poster.png&w=1920&q=70" fetchPriority="high" />
+        <link rel="preload" as="image" href="/_next/image?url=%2Fimages%2Fslider-poster2.png&w=1920&q=70" fetchPriority="high" />
+        <link rel="preload" as="image" href="/_next/image?url=%2Fimages%2Fslider-poster3.png&w=1920&q=70" fetchPriority="high" />
+        <link rel="preload" as="image" href="/_next/image?url=%2Fimages%2Fvid4-poster.png&w=1920&q=70" fetchPriority="high" />
         
         {/* Critical CSS for mega-fast slider */}
         <style dangerouslySetInnerHTML={{
