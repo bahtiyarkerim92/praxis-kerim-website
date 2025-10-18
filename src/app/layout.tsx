@@ -45,10 +45,10 @@ export default async function RootLayout({
     <html lang={lang} suppressHydrationWarning>
       <head>
         {/* Aggressive preloading for ultra-fast LCP */}
-        <link rel="preload" as="image" href="/images/slider-poster.png" fetchpriority="high" />
-        <link rel="preload" as="image" href="/images/slider-poster2.png" fetchpriority="high" />
-        <link rel="preload" as="image" href="/images/slider-poster3.png" fetchpriority="high" />
-        <link rel="preload" as="image" href="/images/vid4-poster.png" fetchpriority="high" />
+        <link rel="preload" as="image" href="/images/slider-poster.png" fetchPriority="high" />
+        <link rel="preload" as="image" href="/images/slider-poster2.png" fetchPriority="high" />
+        <link rel="preload" as="image" href="/images/slider-poster3.png" fetchPriority="high" />
+        <link rel="preload" as="image" href="/images/vid4-poster.png" fetchPriority="high" />
         
         {/* DNS prefetch for faster image loading */}
         <link rel="dns-prefetch" href="//praxiskerim.de" />
