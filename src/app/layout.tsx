@@ -48,7 +48,7 @@ export default async function RootLayout({
         <link rel="dns-prefetch" href="//praxiskerim.de" />
         <link rel="preconnect" href="https://praxiskerim.de" crossOrigin="anonymous" />
         
-        {/* Preload critical images with highest priority - Now JPEG compressed */}
+        {/* Preload ALL slider images for instant LCP - Ultra-fast loading */}
         <link rel="preload" as="image" href="/images/slider-poster.png" fetchPriority="high" />
         <link rel="preload" as="image" href="/images/slider-poster2.png" fetchPriority="high" />
         <link rel="preload" as="image" href="/images/slider-poster3.png" fetchPriority="high" />
@@ -59,18 +59,27 @@ export default async function RootLayout({
         <link rel="preload" as="image" href="/_next/image?url=%2Fimages%2Fslider-poster2.png&w=640&q=75" fetchPriority="high" />
         <link rel="preload" as="image" href="/_next/image?url=%2Fimages%2Fslider-poster3.png&w=640&q=75" fetchPriority="high" />
         
-        {/* Critical CSS for slider */}
+        {/* Critical CSS for mega-fast slider */}
         <style dangerouslySetInnerHTML={{
           __html: `
-            .slider-container { 
+            /* Ultra-fast slider optimizations */
+            .mega-fast-slider {
               contain: layout style paint;
-              will-change: transform;
-            }
-            .slider-image {
-              image-rendering: -webkit-optimize-contrast;
-              image-rendering: crisp-edges;
-              backface-visibility: hidden;
               transform: translateZ(0);
+              will-change: transform;
+              backface-visibility: hidden;
+            }
+            .mega-fast-slider img {
+              transform: translateZ(0);
+              backface-visibility: hidden;
+              will-change: opacity;
+              image-rendering: optimizeSpeed;
+              image-rendering: -webkit-optimize-contrast;
+            }
+            /* Prevent layout shifts */
+            .mega-fast-slider {
+              aspect-ratio: 16/9;
+              width: 100%;
             }
           `
         }} />

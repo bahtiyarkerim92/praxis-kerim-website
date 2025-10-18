@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import ImageSlider from '../components/ImageSlider';
+import MegaFastSlider from '../components/MegaFastSlider';
 import Image from "next/image";
 import LeistungenSection from '../components/LeistungenSection';
 import { useI18n } from '../i18n';
@@ -14,8 +14,8 @@ export default function HomePage() {
   // VideoSlider entfernt, nur Bilderslider bleibt
   return (
     <div className="w-full">
-  {/* Bilderslider - Optimized for LCP */}
-  <ImageSlider />
+        {/* Mega-Fast Slider - 100% LCP Optimized */}
+        <MegaFastSlider />
       <section className="w-full bg-black text-white py-16">
         {/* Social icons with zoom tower effect */}
   <div className="flex justify-center mb-10 gap-4">
