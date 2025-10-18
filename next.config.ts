@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
   // Internationalization
   i18n: undefined, // Using custom i18n solution
 
-  // Image optimization
+  // Image optimization - Ultra-fast loading
   images: {
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
@@ -18,6 +18,15 @@ const nextConfig: NextConfig = {
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     unoptimized: false,
     loader: 'default',
+    // Aggressive optimization for LCP
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'praxiskerim.de',
+        port: '',
+        pathname: '/images/**',
+      },
+    ],
   },
 
   // Compression

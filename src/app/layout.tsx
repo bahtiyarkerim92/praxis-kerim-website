@@ -44,10 +44,31 @@ export default async function RootLayout({
   return (
     <html lang={lang} suppressHydrationWarning>
       <head>
-        {/* Preload critical images for LCP optimization */}
-        <link rel="preload" as="image" href="/images/slider-poster.png" />
-        <link rel="preload" as="image" href="/images/slider-poster2.png" />
-        <link rel="preload" as="image" href="/images/slider-poster3.png" />
+        {/* Aggressive preloading for ultra-fast LCP */}
+        <link rel="preload" as="image" href="/images/slider-poster.png" fetchpriority="high" />
+        <link rel="preload" as="image" href="/images/slider-poster2.png" fetchpriority="high" />
+        <link rel="preload" as="image" href="/images/slider-poster3.png" fetchpriority="high" />
+        <link rel="preload" as="image" href="/images/vid4-poster.png" fetchpriority="high" />
+        
+        {/* DNS prefetch for faster image loading */}
+        <link rel="dns-prefetch" href="//praxiskerim.de" />
+        <link rel="preconnect" href="https://praxiskerim.de" crossOrigin="anonymous" />
+        
+        {/* Critical CSS for slider */}
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            .slider-container { 
+              contain: layout style paint;
+              will-change: transform;
+            }
+            .slider-image {
+              image-rendering: -webkit-optimize-contrast;
+              image-rendering: crisp-edges;
+              backface-visibility: hidden;
+              transform: translateZ(0);
+            }
+          `
+        }} />
       </head>
       <body suppressHydrationWarning>
         {/* JSON-LD Structured Data */}
