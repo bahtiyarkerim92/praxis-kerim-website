@@ -15,6 +15,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/chirurgie',
     '/beschneidungen',
     '/uslugi',
+    '/impressum',
+    '/datenschutz',
   ];
 
   const sitemap: MetadataRoute.Sitemap = [];
@@ -34,6 +36,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency = 'daily';
       } else if (route === '/kontakt' || route === '/ueber-uns') {
         priority = 0.8;
+        changeFrequency = 'monthly';
+      } else if (route === '/impressum' || route === '/datenschutz') {
+        priority = 0.6;
         changeFrequency = 'monthly';
       } else {
         priority = 0.7;

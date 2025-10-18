@@ -17,7 +17,7 @@ export default function Footer() {
 						height={140}
 						className="mb-4"
 					/>
-					 <p className="text-gray-400 text-sm text-center md:text-left">
+					 <p className="text-gray-200 text-sm text-center md:text-left">
 						 {t('footer.slogan1')}<br />{t('footer.slogan2')}
 					 </p>
 				</div>
@@ -25,7 +25,7 @@ export default function Footer() {
 						{/* Öffnungszeiten */}
 						<div className="flex flex-col items-center md:items-start bg-black bg-opacity-80 rounded-2xl p-6">
 							 <h3 className="text-lg font-bold mb-3 text-[#EEC16B]">{t('footer.openingHours')}</h3>
-							<ul className="space-y-2 text-gray-300 text-sm">
+							<ul className="space-y-2 text-gray-200 text-sm">
 								 <li className="hover:text-[#EEC16B] transition-colors">{t('footer.opening.monThu')}</li>
 								 <li className="hover:text-[#EEC16B] transition-colors">{t('footer.opening.fri')} <span className='whitespace-nowrap'>({t('footer.opening.friNote')})</span></li>
 							</ul>
@@ -34,7 +34,7 @@ export default function Footer() {
 				{/* Kontakt */}
 				<div className="flex flex-col items-center md:items-start bg-black bg-opacity-80 rounded-2xl p-6">
 					 <h3 className="text-lg font-bold mb-3 text-[#EEC16B]">{t('footer.contact')}</h3>
-					<ul className="space-y-2 text-gray-300 text-sm">
+					<ul className="space-y-2 text-gray-200 text-sm">
 						<li>
 							 <a href="tel:+4969870015360" className="hover:text-[#EEC16B] transition-colors">
 								 {t('footer.phone1')}
@@ -65,7 +65,7 @@ export default function Footer() {
 								href="https://maps.app.goo.gl/jpgJxAfiU59x1GHGA"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="text-gray-300 text-sm hover:text-[#EEC16B] transition-colors text-center md:text-left cursor-pointer"
+								className="text-gray-200 text-sm hover:text-[#EEC16B] transition-colors text-center md:text-left cursor-pointer"
 							>
 								 {t('footer.address1')}<br />
 								 {t('footer.address2')}
@@ -74,7 +74,7 @@ export default function Footer() {
 			</div>
 
 			{/* Bottom Bar */}
-			<div className="mt-10 border-t border-gray-800 pt-6 text-center text-gray-500 text-sm">
+			<div className="mt-10 border-t border-gray-800 pt-6 text-center text-gray-300 text-sm">
 				 © {new Date().getFullYear()} {t('footer.copyright')}
 			</div>
 		</footer>

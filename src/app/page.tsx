@@ -14,7 +14,7 @@ export default function HomePage() {
   // VideoSlider entfernt, nur Bilderslider bleibt
   return (
     <div className="w-full">
-  {/* Bilderslider */}
+  {/* Bilderslider - Optimized for LCP */}
   <ImageSlider />
       <section className="w-full bg-black text-white py-16">
         {/* Social icons with zoom tower effect */}

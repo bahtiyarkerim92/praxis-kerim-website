@@ -43,6 +43,12 @@ export default async function RootLayout({
   
   return (
     <html lang={lang} suppressHydrationWarning>
+      <head>
+        {/* Preload critical images for LCP optimization */}
+        <link rel="preload" as="image" href="/images/slider-poster.png" />
+        <link rel="preload" as="image" href="/images/slider-poster2.png" />
+        <link rel="preload" as="image" href="/images/slider-poster3.png" />
+      </head>
       <body suppressHydrationWarning>
         {/* JSON-LD Structured Data */}
         <script
