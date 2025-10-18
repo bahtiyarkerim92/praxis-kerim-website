@@ -44,15 +44,20 @@ export default async function RootLayout({
   return (
     <html lang={lang} suppressHydrationWarning>
       <head>
-        {/* Aggressive preloading for ultra-fast LCP */}
+        {/* Critical resource hints for ultra-fast LCP */}
+        <link rel="dns-prefetch" href="//praxiskerim.de" />
+        <link rel="preconnect" href="https://praxiskerim.de" crossOrigin="anonymous" />
+        
+        {/* Preload critical images with highest priority */}
         <link rel="preload" as="image" href="/images/slider-poster.png" fetchPriority="high" />
         <link rel="preload" as="image" href="/images/slider-poster2.png" fetchPriority="high" />
         <link rel="preload" as="image" href="/images/slider-poster3.png" fetchPriority="high" />
         <link rel="preload" as="image" href="/images/vid4-poster.png" fetchPriority="high" />
         
-        {/* DNS prefetch for faster image loading */}
-        <link rel="dns-prefetch" href="//praxiskerim.de" />
-        <link rel="preconnect" href="https://praxiskerim.de" crossOrigin="anonymous" />
+        {/* Preload Next.js image optimization endpoint */}
+        <link rel="preload" as="image" href="/_next/image?url=%2Fimages%2Fslider-poster.png&w=640&q=75" fetchPriority="high" />
+        <link rel="preload" as="image" href="/_next/image?url=%2Fimages%2Fslider-poster2.png&w=640&q=75" fetchPriority="high" />
+        <link rel="preload" as="image" href="/_next/image?url=%2Fimages%2Fslider-poster3.png&w=640&q=75" fetchPriority="high" />
         
         {/* Critical CSS for slider */}
         <style dangerouslySetInnerHTML={{
