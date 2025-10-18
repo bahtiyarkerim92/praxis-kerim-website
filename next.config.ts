@@ -18,6 +18,10 @@ const nextConfig: NextConfig = {
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     unoptimized: false,
     loader: 'default',
+    // Force WebP/AVIF in all environments
+    ...(process.env.NODE_ENV === 'development' && {
+      formats: ['image/avif', 'image/webp'],
+    }),
     // Enable aggressive optimization
     remotePatterns: [
       {
