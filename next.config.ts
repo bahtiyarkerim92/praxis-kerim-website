@@ -18,6 +18,8 @@ const nextConfig: NextConfig = {
            contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
            unoptimized: false,
            loader: 'default',
+           // Quality settings for Next.js 16 compatibility
+           qualities: [25, 50, 70, 75, 80, 90, 100],
            // Force WebP/AVIF in all environments
            ...(process.env.NODE_ENV === 'development' && {
              formats: ['image/avif', 'image/webp'],
@@ -31,9 +33,6 @@ const nextConfig: NextConfig = {
                pathname: '/images/**',
              },
            ],
-           // Ultra-aggressive caching for images
-           cacheMaxAge: 31536000, // 1 year
-           cacheControl: 'public, max-age=31536000, immutable',
          },
 
   // Compression

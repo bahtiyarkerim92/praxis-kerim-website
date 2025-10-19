@@ -14,9 +14,9 @@ export default function PerformanceMonitor() {
         
         console.log('🚀 LCP Performance:', {
           lcp: lastEntry.startTime,
-          element: lastEntry.element?.tagName,
-          url: lastEntry.url,
-          size: lastEntry.size
+          element: (lastEntry as any).element?.tagName,
+          url: (lastEntry as any).url,
+          size: (lastEntry as any).size
         });
         
         // Cache-Hit-Rate messen
@@ -25,7 +25,7 @@ export default function PerformanceMonitor() {
       
       try {
         observer.observe({ entryTypes: ['largest-contentful-paint'] });
-      } catch (error) {
+      } catch {
         console.log('LCP Observer nicht unterstützt');
       }
       
@@ -42,7 +42,7 @@ export default function PerformanceMonitor() {
       
       try {
         fcpObserver.observe({ entryTypes: ['paint'] });
-      } catch (error) {
+      } catch {
         console.log('FCP Observer nicht unterstützt');
       }
       
@@ -109,7 +109,7 @@ export default function PerformanceMonitor() {
           const keys = await cache.keys();
           console.log(`📦 Cache "${cacheName}": ${keys.length} Einträge`);
         }
-      } catch (error) {
+      } catch {
         console.log('Cache-Status konnte nicht abgerufen werden');
       }
     }
