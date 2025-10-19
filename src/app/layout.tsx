@@ -2,6 +2,7 @@ import { cookies } from 'next/headers';
 import { Metadata, Viewport } from 'next';
 import ClientRootLayout from './ClientRootLayout';
 import { generatePageMetadata, generateLocalBusinessJsonLd, generateDoctorJsonLd } from '../config/seo';
+import PerformanceMonitor from '../components/PerformanceMonitor';
 
 export async function generateMetadata(): Promise<Metadata> {
   const cookieStore = await cookies();
@@ -48,19 +49,20 @@ export default async function RootLayout({
         <link rel="dns-prefetch" href="//praxiskerim.de" />
         <link rel="preconnect" href="https://praxiskerim.de" crossOrigin="anonymous" />
         
-        {/* Preload ALL slider images for instant LCP - Ultra-fast loading */}
-        <link rel="preload" as="image" href="/images/slider-poster.png" fetchPriority="high" />
-        <link rel="preload" as="image" href="/images/slider-poster2.png" fetchPriority="high" />
-        <link rel="preload" as="image" href="/images/slider-poster3.png" fetchPriority="high" />
-        <link rel="preload" as="image" href="/images/vid4-poster.png" fetchPriority="high" />
+               {/* Preload ALL slider images for instant LCP - Ultra-fast loading */}
+               <link rel="preload" as="image" href={process.env.NODE_ENV === 'development' ? "/images/slider-poster.png" : "/images/slider-poster.avif"} fetchPriority="high" />
+               <link rel="preload" as="image" href={process.env.NODE_ENV === 'development' ? "/images/slider-poster2.png" : "/images/slider-poster2.avif"} fetchPriority="high" />
+               <link rel="preload" as="image" href={process.env.NODE_ENV === 'development' ? "/images/slider-poster3.png" : "/images/slider-poster3.avif"} fetchPriority="high" />
+               <link rel="preload" as="image" href={process.env.NODE_ENV === 'development' ? "/images/vid4-poster.png" : "/images/vid4-poster.avif"} fetchPriority="high" />
+               <link rel="preload" as="image" href={process.env.NODE_ENV === 'development' ? "/images/kontakt.png" : "/images/kontakt.avif"} fetchPriority="high" />
         
-               {/* Preload Next.js image optimization endpoint - WebP/AVIF optimized */}
-               <link rel="preload" as="image" href="/_next/image?url=%2Fimages%2Fslider-poster.png&w=640&q=70" fetchPriority="high" />
-               <link rel="preload" as="image" href="/_next/image?url=%2Fimages%2Fslider-poster.png&w=768&q=70" fetchPriority="high" />
-               <link rel="preload" as="image" href="/_next/image?url=%2Fimages%2Fslider-poster.png&w=1024&q=70" fetchPriority="high" />
-               <link rel="preload" as="image" href="/_next/image?url=%2Fimages%2Fslider-poster.png&w=1280&q=70" fetchPriority="high" />
-               <link rel="preload" as="image" href="/_next/image?url=%2Fimages%2Fslider-poster.png&w=1536&q=70" fetchPriority="high" />
-               <link rel="preload" as="image" href="/_next/image?url=%2Fimages%2Fslider-poster.png&w=1920&q=70" fetchPriority="high" />
+               {/* Preload Next.js image optimization endpoint - AVIF optimized */}
+               <link rel="preload" as="image" href="/_next/image?url=%2Fimages%2Fslider-poster.avif&w=640&q=70" fetchPriority="high" />
+               <link rel="preload" as="image" href="/_next/image?url=%2Fimages%2Fslider-poster.avif&w=768&q=70" fetchPriority="high" />
+               <link rel="preload" as="image" href="/_next/image?url=%2Fimages%2Fslider-poster.avif&w=1024&q=70" fetchPriority="high" />
+               <link rel="preload" as="image" href="/_next/image?url=%2Fimages%2Fslider-poster.avif&w=1280&q=70" fetchPriority="high" />
+               <link rel="preload" as="image" href="/_next/image?url=%2Fimages%2Fslider-poster.avif&w=1536&q=70" fetchPriority="high" />
+               <link rel="preload" as="image" href="/_next/image?url=%2Fimages%2Fslider-poster.avif&w=1920&q=70" fetchPriority="high" />
         
         {/* Critical CSS for mega-fast slider */}
         <style dangerouslySetInnerHTML={{
@@ -86,6 +88,23 @@ export default async function RootLayout({
             }
           `
         }} />
+        
+        {/* Service Worker Registration für Ultra-Fast Caching */}
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            if ('serviceWorker' in navigator) {
+              window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                  .then(function(registration) {
+                    console.log('🚀 Service Worker registriert:', registration.scope);
+                  })
+                  .catch(function(error) {
+                    console.log('❌ Service Worker Registrierung fehlgeschlagen:', error);
+                  });
+              });
+            }
+          `,
+        }} />
       </head>
       <body suppressHydrationWarning>
         {/* JSON-LD Structured Data */}
@@ -97,7 +116,7 @@ export default async function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(doctorJsonLd) }}
         />
-        
+        <PerformanceMonitor />
         <ClientRootLayout initialLang={lang}>{children}</ClientRootLayout>
       </body>
     </html>

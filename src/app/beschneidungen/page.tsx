@@ -12,7 +12,7 @@ export default function BeschneidungenPage() {
       <section className="w-full bg-white text-black p-0 m-0">
         <div className="relative w-full min-h-[320px] md:min-h-[480px] aspect-video flex items-center justify-center overflow-hidden">
                  <Image
-                   src="/images/vid4-poster.png"
+                   src={process.env.NODE_ENV === 'development' ? "/images/vid4-poster.png" : "/images/vid4-poster.avif"}
                    alt="Beschneidung Video Poster – Hausarztpraxis Offenbach"
                    fill
                    className="object-cover"

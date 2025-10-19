@@ -3,11 +3,11 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
-// Komprimierte Bilder - Next.js optimiert für WebP/AVIF
+// Optimierte Bilder mit AVIF-Priorität und PNG-Fallback
 const images = [
-  "/images/slider-poster.png",    // 335KB (komprimiert)
-  "/images/slider-poster2.png",   // 233KB (komprimiert) 
-  "/images/slider-poster3.png",   // 290KB (komprimiert)
+  { avif: "/images/slider-poster.avif", png: "/images/slider-poster.png" },
+  { avif: "/images/slider-poster2.avif", png: "/images/slider-poster2.png" },
+  { avif: "/images/slider-poster3.avif", png: "/images/slider-poster3.png" },
 ];
 
 export default function MegaFastSlider() {
@@ -20,13 +20,22 @@ export default function MegaFastSlider() {
     return () => clearInterval(interval);
   }, []);
 
+  // Fallback-Logik für AVIF-Unterstützung
+  const getImageSrc = (imageObj: { avif: string; png: string }) => {
+    // In Development-Modus verwenden wir PNG, in Production AVIF
+    if (process.env.NODE_ENV === 'development') {
+      return imageObj.png;
+    }
+    return imageObj.avif;
+  };
+
   return (
     <div className="w-full aspect-video bg-black relative overflow-hidden mega-fast-slider">
-      {/* Next.js Image mit WebP/AVIF Optimierung */}
-      {images.map((src, index) => (
+      {/* Next.js Image mit WebP/AVIF Optimierung und PNG-Fallback */}
+      {images.map((imageObj, index) => (
         <Image
-          key={src}
-          src={src}
+          key={imageObj.avif}
+          src={getImageSrc(imageObj)}
           alt={`Slider ${index + 1} – Hausarztpraxis Offenbach`}
           fill
           className={`object-cover transition-opacity duration-500 ${
@@ -38,10 +47,10 @@ export default function MegaFastSlider() {
             backfaceVisibility: 'hidden',
             willChange: 'opacity'
           }}
-                 // Next.js Image Optimierungen
-                 priority={index === 0} // Erstes Bild mit höchster Priorität
-                 quality={70} // Optimiert für WebP/AVIF Kompression
-                 sizes="(max-width: 640px) 640px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, (max-width: 1280px) 1280px, (max-width: 1536px) 1536px, 1920px"
+          // Next.js Image Optimierungen
+          priority={index === 0} // Erstes Bild mit höchster Priorität
+          quality={70} // Optimiert für WebP/AVIF Kompression
+          sizes="(max-width: 640px) 640px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, (max-width: 1280px) 1280px, (max-width: 1536px) 1536px, 1920px"
           placeholder="blur"
           blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
           loading={index === 0 ? "eager" : "lazy"}

@@ -11,14 +11,14 @@ export default function KontaktPage() {
     <main className="w-full">
       {/* Kontaktinformationen mit Hintergrundbild */}
   <section className="w-full relative py-16 flex flex-col items-center justify-center overflow-hidden min-h-screen">
-        <Image
-          src="/images/kontakt.png"
-          alt="Kontakt Hintergrund"
-          fill
-          className="absolute left-0 top-0 w-full h-full min-w-full min-h-full object-cover opacity-70 z-0"
-          priority
-          sizes="100vw"
-        />
+               <Image
+                 src={process.env.NODE_ENV === 'development' ? "/images/kontakt.png" : "/images/kontakt.avif"}
+                 alt="Kontakt Hintergrund"
+                 fill
+                 className="absolute left-0 top-0 w-full h-full min-w-full min-h-full object-cover opacity-70 z-0"
+                 priority
+                 sizes="100vw"
+               />
         <div className="relative z-20 w-full">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6 mt-32">
             {/* Öffnungszeiten */}
